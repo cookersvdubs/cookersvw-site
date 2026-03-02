@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Work — Cooker's Restoration &amp; Fabrication, LLC</title>
+  <meta name="description" content="Browse hundreds of completed VW restorations from Cooker's shop in Williamsport, MD. Bugs, Buses, Ghias, Things, Panels, Double Cabs, and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.25rem;
+      align-items: center;
+    }
+    .filter-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--mid-gray);
+      margin-right: 0.25rem;
+      white-space: nowrap;
+    }
+    .filter-btn {
+      background: white;
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 3px;
+      padding: 0.4rem 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: var(--vw-blue);
+      color: var(--vw-blue);
+    }
+    .filter-btn.active {
+      background: var(--vw-blue);
+      border-color: var(--vw-blue);
+      color: white;
+    }
+
+    /* ── Car card grid ── */
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .car-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .car-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .car-card-img-wrap {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+    .car-card-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .car-card:hover .car-card-img-wrap img { transform: scale(1.05); }
+    .car-card-body {
+      padding: 0.85rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .car-card-cat {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+    .car-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .car-card-count {
+      font-size: 0.72rem;
+      color: var(--mid-gray);
+      font-weight: 300;
+      margin-top: auto;
+      padding-top: 0.4rem;
+    }
+
+    /* ── No-results ── */
+    .no-results {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--mid-gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* ── Result count ── */
+    .result-count {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .car-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    }
+    @media (max-width: 380px) {
+      .car-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-badge">CR&amp;F</div>
+    <div class="logo-text">
+      <strong>Cooker's</strong>
+      <span>Restoration &amp; Fabrication · Williamsport, MD</span>
+    </div>
+  </a>
+  <nav>
+    <div class="nav-item has-dropdown">
+      <a href="our-work.html">Our Work <span class="nav-caret">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="our-work.html#gallery">All Completed Restorations</a>
+        <div class="dropdown-divider"></div>
+        <a href="our-work.html?cat=Beetle#gallery">Beetle</a>
+        <a href="our-work.html?cat=Bus#gallery">Bus / Transporter</a>
+        <a href="our-work.html?cat=Karmann+Ghia#gallery">Karmann Ghia</a>
+        <a href="our-work.html?cat=Thing#gallery">Thing</a>
+        <a href="our-work.html?cat=Double+Cab#gallery">Double Cab</a>
+        <a href="our-work.html?cat=Single+Cab#gallery">Single Cab</a>
+        <a href="our-work.html?cat=Panel#gallery">Panel Van</a>
+        <a href="our-work.html?cat=Type+3#gallery">Type 3</a>
+        <a href="our-work.html?cat=Custom+%2F+Hot+Rod#gallery">Custom / Hot Rod</a>
+        <a href="our-work.html?cat=Porsche+356#gallery">Porsche 356</a>
+      </div>
+    </div>
+    <div class="nav-item has-dropdown">
+      <a href="the-cars.html">The Cars <span class="nav-caret">▾</span></a>
+      <div class="nav-dropdown">
+        <a href="our-work.html">Completed Builds</a>
+        <a href="the-cars.html#in-progress">In Progress</a>
+        <a href="the-cars.html#personal">Personal Rides</a>
+      </div>
+    </div>
+    <a href="videos.html">Videos</a>
+    <a href="about.html">About</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="open-houses.html">Open Houses</a>
+    <a href="contact.html" class="cta">Contact Us</a>
+  </nav>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mobile-nav">
+  <div class="has-sub">
+    <a href="our-work.html">Our Work <span class="nav-caret">▾</span></a>
+    <div class="mobile-sub">
+      <a href="our-work.html#gallery">All Restorations</a>
+      <a href="our-work.html?cat=Beetle#gallery">Beetle</a>
+      <a href="our-work.html?cat=Bus#gallery">Bus / Transporter</a>
+      <a href="our-work.html?cat=Karmann+Ghia#gallery">Karmann Ghia</a>
+      <a href="our-work.html?cat=Thing#gallery">Thing</a>
+      <a href="our-work.html?cat=Double+Cab#gallery">Double Cab</a>
+      <a href="our-work.html?cat=Single+Cab#gallery">Single Cab</a>
+      <a href="our-work.html?cat=Panel#gallery">Panel Van</a>
+      <a href="our-work.html?cat=Custom+%2F+Hot+Rod#gallery">Custom / Hot Rod</a>
+      <a href="our-work.html?cat=Porsche+356#gallery">Porsche 356</a>
+    </div>
+  </div>
+  <div class="has-sub">
+    <a href="the-cars.html">The Cars <span class="nav-caret">▾</span></a>
+    <div class="mobile-sub">
+      <a href="our-work.html">Completed Builds</a>
+      <a href="the-cars.html#in-progress">In Progress</a>
+      <a href="the-cars.html#personal">Personal Rides</a>
+    </div>
+  </div>
+  <a href="videos.html">Videos</a>
+  <a href="about.html">About</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="open-houses.html">Open Houses</a>
+  <a href="contact.html" class="cta">Contact Us →</a>
+</nav>
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <img class="page-banner-img"
+    src="optimized_images/hero_images/66-lotus-white-21-window.jpg"
+    alt="Stunning 21-window VW bus restoration"
+  />
+  <div class="page-banner-overlay"></div>
+  <div class="page-banner-content">
+    <div class="hero-eyebrow">Completed Restorations</div>
+    <h1>Our Work</h1>
+  </div>
+</div>
+
+<!-- FILTER BAR (Visible Immediately) -->
+<section class="section section-cream" style="padding:1.5rem 0 1rem; background:#f8f6f3;">
+  <div class="filter-bar" id="filterBar" style="justify-content:center;">
+    <span class="filter-label">Filter by:</span>
+    <!-- buttons injected by JS -->
+  </div>
+  <div class="result-count" id="resultCount" style="text-align:center; margin-top:0.75rem;"></div>
+</section>
+
+
+
+<!-- FILTERABLE ARCHIVE -->
+<section id="gallery" class="section section-cream-dark">
+  <div class="section-label">The Full Archive</div>
+  <h2 style="margin-bottom:1.75rem;">All Completed Restorations</h2>
+
+  <div class="car-grid" id="carGrid">
+    <!-- cards injected by JS -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-strip">
+  <div class="about-img-wrap">
+    
+    <div class="about-img-overlay"></div>
+  </div>
+  <div class="about-content">
+    <div class="section-label">Ready to Start?</div>
+    <h2>Your Car<br/>Could Be Next.</h2>
+    <p>Every car you see in this gallery started as a project — some rusty, some incomplete, some needing everything. Bring us yours and let's talk about what's possible.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <a href="the-cars.html" class="btn btn-outline">See In-Progress Builds</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <strong>Cooker's Restoration &amp; Fabrication, LLC</strong>
+      <p>East coast air-cooled VW professionals. Serving the community from Williamsport, Maryland.</p>
+      <div class="footer-address">
+        14645 Clear Spring Rd · Williamsport, MD 21795<br/>
+        <a href="tel:3012239292">301-223-9292</a> · Mon–Fri 8am–5pm EST
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Work</h4>
+      <a href="our-work.html">Completed Restorations</a>
+      <a href="the-cars.html">In Progress</a>
+      <a href="the-cars.html">Personal Rides</a>
+      <a href="videos.html">Videos</a>
+    </div>
+    <div class="footer-col">
+      <h4>More</h4>
+      <a href="about.html">About Us</a>
+      <a href="testimonials.html">Testimonials</a>
+      <a href="open-houses.html">Open Houses</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-disclaimer">The use of "VW" and the name Volkswagen, Beetle, Bug, Bus, Kombi, Transporter, Type 1, Type 2, Type 3, Ghia, Karmann Ghia and Thing is for the sole purpose of application and description and in no way implies any connection with the Volkswagen Corporation.</div>
+    <span>© Cooker's Restoration &amp; Fabrication, LLC</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ── Car data (from cars/index.json) ──────────────────────────────
+  const CARS = [
+  {
+    "slug": "1951-crotch-cooler-rag",
+    "title": "1951 Crotch Cooler Rag",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 153,
+    "firstImage": "img-e1896.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1951-german-standard",
+    "title": "1951 German Standard",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 53,
+    "firstImage": "7351895.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1955-ragtop",
+    "title": "1955 Ragtop",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 48,
+    "firstImage": "img-e4100.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1956-oval",
+    "title": "1956 Oval",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 88,
+    "firstImage": "img-e4425.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1960-panel",
+    "title": "1960 Panel",
+    "category": "Panel",
+    "status": "complete",
+    "imageCount": 57,
+    "firstImage": "5981871.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1963-23-window-deluxe",
+    "title": "1963 23 window deluxe",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 115,
+    "firstImage": "img-1681.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1964-jersey-looker",
+    "title": "1964 &quot;Jersey Looker&quot;",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 74,
+    "firstImage": "4367407.jpg",
+    "description": ""
+  },
+  {
+    "slug": "1965-beetle-vert",
+    "title": "1965 Beetle Vert",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 85,
+    "firstImage": "7006320.jpg",
+    "description": ""
+  },
+  {
+    "slug": "49-standard",
+    "title": "'49 Standard",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 205,
+    "firstImage": "img-1183.jpg",
+    "description": ""
+  },
+  {
+    "slug": "50-sleeper-split",
+    "title": "'50 Sleeper Split",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 78,
+    "firstImage": "5017347.jpg",
+    "description": ""
+  },
+  {
+    "slug": "51-turbo-split",
+    "title": "'51 Turbo Split",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 178,
+    "firstImage": "7075280.jpg",
+    "description": ""
+  },
+  {
+    "slug": "52-vert",
+    "title": "52 vert",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 93,
+    "firstImage": "img-e7662.jpg",
+    "description": ""
+  },
+  {
+    "slug": "54-barn-door",
+    "title": "54 BARN DOOR",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 76,
+    "firstImage": "img-5581.jpg",
+    "description": ""
+  },
+  {
+    "slug": "58-double-door-panel",
+    "title": "'58 Double Door Panel",
+    "category": "Panel",
+    "status": "complete",
+    "imageCount": 67,
+    "firstImage": "2386735.jpg",
+    "description": ""
+  },
+  {
+    "slug": "60-double-cab",
+    "title": "60 double cab",
+    "category": "Double Cab",
+    "status": "complete",
+    "imageCount": 90,
+    "firstImage": "img-e9810.jpg",
+    "description": ""
+  },
+  {
+    "slug": "62-h-d-single-cab",
+    "title": "'62 H-D Single Cab",
+    "category": "Single Cab",
+    "status": "complete",
+    "imageCount": 73,
+    "firstImage": "1819183.jpg",
+    "description": ""
+  },
+  {
+    "slug": "66-lotus-white-21-window",
+    "title": "'66 Lotus White 21 Window",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 67,
+    "firstImage": "9683216.jpg",
+    "description": ""
+  },
+  {
+    "slug": "alexs-65-beetle",
+    "title": "Alex's 65 Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 83,
+    "firstImage": "img-e5444.jpg",
+    "description": ""
+  },
+  {
+    "slug": "andys-56-beetle",
+    "title": "Andy's '56 beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 157,
+    "firstImage": "1_2.jpg",
+    "description": ""
+  },
+  {
+    "slug": "andys-baja",
+    "title": "Andy's Baja",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 113,
+    "firstImage": "img-e7589.jpg",
+    "description": ""
+  },
+  {
+    "slug": "andys-euro-63",
+    "title": "Andy's Euro '63",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 66,
+    "firstImage": "1811246.jpg",
+    "description": ""
+  },
+  {
+    "slug": "arts-62-beetle",
+    "title": "Art's 62 Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 108,
+    "firstImage": "img-e4929.jpg",
+    "description": ""
+  },
+  {
+    "slug": "betsys-69-ghia",
+    "title": "Betsy's '69 Ghia",
+    "category": "Karmann Ghia",
+    "status": "in_progress",
+    "imageCount": 150,
+    "firstImage": "img-8325.jpg",
+    "description": ""
+  },
+  {
+    "slug": "bill--coles-60-dc",
+    "title": "Bill & Cole's '60 D/C",
+    "category": "Double Cab",
+    "status": "complete",
+    "imageCount": 105,
+    "firstImage": "img-4262.jpg",
+    "description": ""
+  },
+  {
+    "slug": "bills-53-oval",
+    "title": "Bill's '53 Oval",
+    "category": "Double Cab",
+    "status": "complete",
+    "imageCount": 140,
+    "firstImage": "img-e1873.jpg",
+    "description": ""
+  },
+  {
+    "slug": "bradens-1969-beetle",
+    "title": "Braden's 1969 Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 169,
+    "firstImage": "img-e8950.jpg",
+    "description": ""
+  },
+  {
+    "slug": "bradsher-73-thing",
+    "title": "Bradsher 73 Thing",
+    "category": "Thing",
+    "status": "complete",
+    "imageCount": 105,
+    "firstImage": "img-e7649.jpg",
+    "description": ""
+  },
+  {
+    "slug": "brians-56-oval",
+    "title": "Brian's '56 Oval",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 109,
+    "firstImage": "4894713.jpg",
+    "description": "Previously Started Somewhere Else, Now Here To Be Corrected..."
+  },
+  {
+    "slug": "brookes-73-thing",
+    "title": "Brooke's 73 Thing",
+    "category": "Thing",
+    "status": "complete",
+    "imageCount": 166,
+    "firstImage": "img-e6033.jpg",
+    "description": ""
+  },
+  {
+    "slug": "brown-kombi",
+    "title": "Brown Kombi",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 52,
+    "firstImage": "3824810.jpg",
+    "description": ""
+  },
+  {
+    "slug": "chads-63-23-window",
+    "title": "Chad's '63 23 window",
+    "category": "Double Cab",
+    "status": "complete",
+    "imageCount": 80,
+    "firstImage": "uppf7849.jpg",
+    "description": ""
+  },
+  {
+    "slug": "chris-58-beetle",
+    "title": "Chris' '58 beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 56,
+    "firstImage": "img-2757.jpg",
+    "description": ""
+  },
+  {
+    "slug": "chucks-57",
+    "title": "Chuck's 57",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 127,
+    "firstImage": "img-3337.jpg",
+    "description": ""
+  },
+  {
+    "slug": "chucks-64-sunroof-beetle",
+    "title": "Chuck's '64 sunroof beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 44,
+    "firstImage": "img-1955.jpg",
+    "description": ""
+  },
+  {
+    "slug": "corts-57",
+    "title": "Cort's 57",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 134,
+    "firstImage": "img-8873.jpg",
+    "description": ""
+  },
+  {
+    "slug": "craigs-66-beetle",
+    "title": "Craig's 66 Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 76,
+    "firstImage": "img-8293.jpg",
+    "description": ""
+  },
+  {
+    "slug": "dark-blue-55",
+    "title": "Dark Blue '55",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 94,
+    "firstImage": "6965189.jpg",
+    "description": ""
+  },
+  {
+    "slug": "davids-60-dc",
+    "title": "Davids 60 DC",
+    "category": "Single Cab",
+    "status": "complete",
+    "imageCount": 66,
+    "firstImage": "img-0500.jpg",
+    "description": ""
+  },
+  {
+    "slug": "davids-62-vert",
+    "title": "David's 62 vert",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 125,
+    "firstImage": "jnfowefowei.jpg",
+    "description": ""
+  },
+  {
+    "slug": "davids-73-thing",
+    "title": "David's 73 Thing",
+    "category": "Thing",
+    "status": "complete",
+    "imageCount": 226,
+    "firstImage": "img-39201.jpg",
+    "description": ""
+  },
+  {
+    "slug": "douglas-metalwork-only",
+    "title": "Douglas Metalwork Only",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 45,
+    "firstImage": "2970260.jpg",
+    "description": ""
+  },
+  {
+    "slug": "dougs-67-patina-13-window",
+    "title": "Doug'S '67 Patina 13 window",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 80,
+    "firstImage": "img-2528.jpg",
+    "description": ""
+  },
+  {
+    "slug": "dougs-blue-62",
+    "title": "Doug's Blue '62",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 48,
+    "firstImage": "728799.jpg",
+    "description": ""
+  },
+  {
+    "slug": "floyds-57-metalwork",
+    "title": "Floyd's '57 Metalwork",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 38,
+    "firstImage": "img-e4217.jpg",
+    "description": ""
+  },
+  {
+    "slug": "genes-50-split",
+    "title": "Gene's 50 split",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 177,
+    "firstImage": "image3.jpg",
+    "description": ""
+  },
+  {
+    "slug": "genes-60-ghia-vert",
+    "title": "Gene's 60 ghia vert",
+    "category": "Karmann Ghia",
+    "status": "complete",
+    "imageCount": 127,
+    "firstImage": "img-e4896.jpg",
+    "description": ""
+  },
+  {
+    "slug": "genes-wwii-92e-replica",
+    "title": "Gene's WWII 92e Replica",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 98,
+    "firstImage": "img-3660.jpg",
+    "description": ""
+  },
+  {
+    "slug": "georgines-64-patina",
+    "title": "Georgine's '64 patina",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 46,
+    "firstImage": "img-8136.jpg",
+    "description": ""
+  },
+  {
+    "slug": "glenns-51-split",
+    "title": "Glenn's 51 split",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 62,
+    "firstImage": "img-0090.jpg",
+    "description": ""
+  },
+  {
+    "slug": "green-52-zwitter",
+    "title": "Green 52 zwitter",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 22,
+    "firstImage": "8620872.jpg",
+    "description": ""
+  },
+  {
+    "slug": "howards-56-vert",
+    "title": "Howard's 56 vert",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 83,
+    "firstImage": "img-7789.jpg",
+    "description": ""
+  },
+  {
+    "slug": "howards-64-kombi",
+    "title": "Howard's 64 Kombi",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 116,
+    "firstImage": "7193624.jpg",
+    "description": ""
+  },
+  {
+    "slug": "howards-red-66",
+    "title": "howards red 66",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 69,
+    "firstImage": "354525.jpg",
+    "description": ""
+  },
+  {
+    "slug": "james-51-split",
+    "title": "James' 51 Split",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 89,
+    "firstImage": "img-e2532.jpg",
+    "description": ""
+  },
+  {
+    "slug": "james-62-356",
+    "title": "James 62 356",
+    "category": "Porsche 356",
+    "status": "in_progress",
+    "imageCount": 211,
+    "firstImage": "img-7624.jpg",
+    "description": ""
+  },
+  {
+    "slug": "jasons-67-standard-metal-work",
+    "title": "Jason's '67 Standard Metal Work",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 39,
+    "firstImage": "img-9157.jpg",
+    "description": ""
+  },
+  {
+    "slug": "jasons-68-ghia",
+    "title": "Jason's '68 Ghia",
+    "category": "Karmann Ghia",
+    "status": "complete",
+    "imageCount": 34,
+    "firstImage": "img-3588.jpg",
+    "description": ""
+  },
+  {
+    "slug": "jeannes-70-ghia-vert",
+    "title": "Jeanne's 70 ghia vert",
+    "category": "Karmann Ghia",
+    "status": "complete",
+    "imageCount": 151,
+    "firstImage": "img-e4004.jpg",
+    "description": ""
+  },
+  {
+    "slug": "jeffs-13-to-21",
+    "title": "Jeffs 13 to 21",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 94,
+    "firstImage": "img-8275.jpg",
+    "description": ""
+  },
+  {
+    "slug": "jerrys-67",
+    "title": "Jerry's '67",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 90,
+    "firstImage": "5390571.jpg",
+    "description": ""
+  },
+  {
+    "slug": "joe--amys-70-vert",
+    "title": "Joe & Amy's 70 vert",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 103,
+    "firstImage": "img-9539.jpg",
+    "description": ""
+  },
+  {
+    "slug": "joes-62-23-window",
+    "title": "Joe's '62 23 window",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 119,
+    "firstImage": "img-5596.jpg",
+    "description": ""
+  },
+  {
+    "slug": "john--nancys-63-vert",
+    "title": "John & Nancy's '63 vert",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 117,
+    "firstImage": "img-e5738.jpg",
+    "description": ""
+  },
+  {
+    "slug": "johns-65-deluxe",
+    "title": "John's '65 deluxe",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 155,
+    "firstImage": "img-e8918.jpg",
+    "description": ""
+  },
+  {
+    "slug": "johns-67-beetle",
+    "title": "John's '67 Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 152,
+    "firstImage": "img-e7556.jpg",
+    "description": ""
+  },
+  {
+    "slug": "johns-68",
+    "title": "John's 68",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 50,
+    "firstImage": "img-4675.jpg",
+    "description": ""
+  },
+  {
+    "slug": "johns-73-thing",
+    "title": "John's '73 Thing",
+    "category": "Thing",
+    "status": "in_progress",
+    "imageCount": 78,
+    "firstImage": "img-9202.jpg",
+    "description": ""
+  },
+  {
+    "slug": "justins-57-oval-rag",
+    "title": "Justin's 57 oval rag",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 163,
+    "firstImage": "img-e1883.jpg",
+    "description": ""
+  },
+  {
+    "slug": "justins-thing",
+    "title": "Justin's Thing",
+    "category": "Thing",
+    "status": "complete",
+    "imageCount": 85,
+    "firstImage": "img-0519_2.jpg",
+    "description": ""
+  },
+  {
+    "slug": "k-bugs-64",
+    "title": "K-Bug's '64",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 72,
+    "firstImage": "img-e3116.jpg",
+    "description": ""
+  },
+  {
+    "slug": "karissas-61-dc",
+    "title": "Karissa's '61 DC",
+    "category": "Double Cab",
+    "status": "complete",
+    "imageCount": 76,
+    "firstImage": "2956968.jpg",
+    "description": ""
+  },
+  {
+    "slug": "kim--ryans-67-21",
+    "title": "Kim & Ryan's '67 21",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 156,
+    "firstImage": "img-6825.jpg",
+    "description": ""
+  },
+  {
+    "slug": "kimbers-67",
+    "title": "Kimber's '67",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 83,
+    "firstImage": "img-9252.jpg",
+    "description": ""
+  },
+  {
+    "slug": "levis-tribute-bus",
+    "title": "Levi's Tribute Bus",
+    "category": "Bus",
+    "status": "in_progress",
+    "imageCount": 92,
+    "firstImage": "img-9574.jpg",
+    "description": "This poor thing started its life as a '66 13 window and somewhere along the line, someone decided to hack the hell out of it, putting a '58 roof and rear corners on it. So we're going to keep it a 23 "
+  },
+  {
+    "slug": "marks-73-super-beetle",
+    "title": "Mark's '73 Super Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 105,
+    "firstImage": "img-7579.jpg",
+    "description": ""
+  },
+  {
+    "slug": "martha-the-bay-window",
+    "title": "Martha the Bay Window",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 71,
+    "firstImage": "img-e7774.jpg",
+    "description": ""
+  },
+  {
+    "slug": "martins-brazilian-deluxe",
+    "title": "Martin's Brazilian Deluxe",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 120,
+    "firstImage": "kuiq4274.jpg",
+    "description": ""
+  },
+  {
+    "slug": "mikes-69-beetle",
+    "title": "Mike's '69 Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 149,
+    "firstImage": "475139949-930740222599124-7335336075835419936-n.jpg",
+    "description": ""
+  },
+  {
+    "slug": "mikes-turbo-ghia",
+    "title": "Mike's turbo ghia",
+    "category": "Karmann Ghia",
+    "status": "complete",
+    "imageCount": 115,
+    "firstImage": "img-e1279.jpg",
+    "description": ""
+  },
+  {
+    "slug": "moniques-61",
+    "title": "Monique's '61",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 39,
+    "firstImage": "img-2895.jpg",
+    "description": ""
+  },
+  {
+    "slug": "mouse-grey-64-deluxe",
+    "title": "Mouse Grey 64 Deluxe",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 38,
+    "firstImage": "9769761.jpg",
+    "description": ""
+  },
+  {
+    "slug": "nathan--kristis-63-notch",
+    "title": "Nathan & Kristi's '63 Notch",
+    "category": "Type 3",
+    "status": "complete",
+    "imageCount": 133,
+    "firstImage": "img-9642.jpg",
+    "description": ""
+  },
+  {
+    "slug": "patina-52-split-dash",
+    "title": "Patina '52 Split Dash",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 24,
+    "firstImage": "img-e4428.jpg",
+    "description": ""
+  },
+  {
+    "slug": "patricks-56-ambulance",
+    "title": "Patrick's 56 ambulance",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 70,
+    "firstImage": "img-8790.jpg",
+    "description": ""
+  },
+  {
+    "slug": "paulos-13-to-21",
+    "title": "Paulo's 13 to 21",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 125,
+    "firstImage": "img-7397.jpg",
+    "description": ""
+  },
+  {
+    "slug": "paulos-59-euro-deluxe",
+    "title": "Paulo's '59 Euro Deluxe",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 119,
+    "firstImage": "img-e9890.jpg",
+    "description": ""
+  },
+  {
+    "slug": "penn-state-split",
+    "title": "Penn State Split",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 39,
+    "firstImage": "3868434.jpg",
+    "description": ""
+  },
+  {
+    "slug": "perrys-67-double-cab",
+    "title": "Perry's 67 Double Cab",
+    "category": "Double Cab",
+    "status": "complete",
+    "imageCount": 69,
+    "firstImage": "5041393.jpg",
+    "description": ""
+  },
+  {
+    "slug": "pittmans-triple-white",
+    "title": "Pittmans triple white",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 132,
+    "firstImage": "img-0621.jpg",
+    "description": ""
+  },
+  {
+    "slug": "restorations-in-progress---1966-13-window",
+    "title": "Restorations In Progress - 1966 13 Window",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 86,
+    "firstImage": "8119669.jpg",
+    "description": ""
+  },
+  {
+    "slug": "richards-61-beetle",
+    "title": "Richard's '61 Beetle",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 73,
+    "firstImage": "img-9648a.jpg",
+    "description": ""
+  },
+  {
+    "slug": "roberts-59-sc",
+    "title": "Robert's '59 SC",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 62,
+    "firstImage": "img-5515.jpg",
+    "description": ""
+  },
+  {
+    "slug": "roberts-66-camper",
+    "title": "Robert's '66 Camper",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 30,
+    "firstImage": "img-e5485.jpg",
+    "description": ""
+  },
+  {
+    "slug": "robs-asa-oval",
+    "title": "Rob's ASA oval",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 48,
+    "firstImage": "img-9679.jpg",
+    "description": ""
+  },
+  {
+    "slug": "sarahs-74-sunbug-standard",
+    "title": "Sarah's 74 Sunbug Standard",
+    "category": "Beetle",
+    "status": "in_progress",
+    "imageCount": 230,
+    "firstImage": "img-4289.jpg",
+    "description": ""
+  },
+  {
+    "slug": "scotts-72-redo",
+    "title": "Scott's '72 Redo",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 55,
+    "firstImage": "img-e8626.jpg",
+    "description": ""
+  },
+  {
+    "slug": "scotts-asa-beetle",
+    "title": "Scott's ASA Beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 60,
+    "firstImage": "kccd7140.jpg",
+    "description": ""
+  },
+  {
+    "slug": "shawns-60-beetle",
+    "title": "Shawn's 60 beetle",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 72,
+    "firstImage": "img-e6512.jpg",
+    "description": ""
+  },
+  {
+    "slug": "sues-70-vert",
+    "title": "Sue's '70 vert",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 45,
+    "firstImage": "1652401.jpg",
+    "description": ""
+  },
+  {
+    "slug": "sues-72",
+    "title": "Sue's 72",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 22,
+    "firstImage": "8151894.jpg",
+    "description": ""
+  },
+  {
+    "slug": "tays-zwitter",
+    "title": "Tay's Zwitter",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 70,
+    "firstImage": "img-7036.jpg",
+    "description": ""
+  },
+  {
+    "slug": "the-killer-kombi",
+    "title": "The Killer Kombi",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 54,
+    "firstImage": "3143198.jpg",
+    "description": ""
+  },
+  {
+    "slug": "the-killer-panel",
+    "title": "The Killer Panel",
+    "category": "Panel",
+    "status": "complete",
+    "imageCount": 60,
+    "firstImage": "cooker-s-killer-panel-low-res.jpg",
+    "description": ""
+  },
+  {
+    "slug": "the-mean-machine",
+    "title": "The Mean Machine",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 47,
+    "firstImage": "8752491.jpg",
+    "description": ""
+  },
+  {
+    "slug": "the-phantom-ghia",
+    "title": "The Phantom Ghia",
+    "category": "Karmann Ghia",
+    "status": "complete",
+    "imageCount": 115,
+    "firstImage": "5253382.jpg",
+    "description": ""
+  },
+  {
+    "slug": "the-westdale-52-panel",
+    "title": "The &quot;Westdale&quot; 52 Panel",
+    "category": "Panel",
+    "status": "complete",
+    "imageCount": 127,
+    "firstImage": "img-e1063.jpg",
+    "description": ""
+  },
+  {
+    "slug": "thunder-bug",
+    "title": "Thunder Bug",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 25,
+    "firstImage": "img-6581.jpg",
+    "description": ""
+  },
+  {
+    "slug": "tims-og-paint-60-kombi",
+    "title": "Tim's OG Paint '60 Kombi",
+    "category": "Bus",
+    "status": "complete",
+    "imageCount": 73,
+    "firstImage": "img-7660.jpg",
+    "description": ""
+  },
+  {
+    "slug": "toms-1956-porsche-356a-coupe",
+    "title": "Tom's 1956 Porsche 356A Coupe",
+    "category": "Porsche 356",
+    "status": "complete",
+    "imageCount": 129,
+    "firstImage": "img-e7110.jpg",
+    "description": ""
+  },
+  {
+    "slug": "toms-64-patina",
+    "title": "Tom's 64 patina",
+    "category": "Beetle",
+    "status": "complete",
+    "imageCount": 171,
+    "firstImage": "6136935.jpg",
+    "description": ""
+  },
+  {
+    "slug": "toms-manx",
+    "title": "Tom's Manx",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 64,
+    "firstImage": "img-e3031.jpg",
+    "description": ""
+  },
+  {
+    "slug": "toms-syncro",
+    "title": "Tom's syncro",
+    "category": "Custom / Hot Rod",
+    "status": "complete",
+    "imageCount": 54,
+    "firstImage": "img-0520.jpg",
+    "description": "Remember Tom? We recently finished a patina restoration on his '64 bus? Well here is his 4X4. This thing is wild. Check this out: Subaru 3.0l H6 engine, original VW transaxle with modified gearing and"
+  },
+  {
+    "slug": "vanessas-62-panel",
+    "title": "Vanessa's 62 panel",
+    "category": "Panel",
+    "status": "complete",
+    "imageCount": 75,
+    "firstImage": "img-e1461.jpg",
+    "description": ""
+  }
+];
+
+  // Image root — relative from new_site/
+  const IMG_ROOT = 'optimized_images/';
+  const FALLBACK = 'optimized_images/header_images/1425922475.jpg';
+
+  // ── Categories (in display order) ──────────────────────────────
+  const CATEGORIES = [
+    'All',
+    'Beetle',
+    'Bus',
+    'Karmann Ghia',
+    'Thing',
+    'Double Cab',
+    'Single Cab',
+    'Panel',
+    'Type 3',
+    'Custom / Hot Rod',
+    'Porsche 356',
+  ];
+
+  // ── State ──────────────────────────────────────────────────────
+  let activeCategory = 'All';
+
+  // ── Elements ───────────────────────────────────────────────────
+  const filterBar   = document.getElementById('filterBar');
+  const carGrid     = document.getElementById('carGrid');
+  const resultCount = document.getElementById('resultCount');
+
+  // ── Build filter buttons ────────────────────────────────────────
+  function buildFilters() {
+    // Count per category
+    const counts = {};
+    CARS.forEach(c => {
+      counts[c.category] = (counts[c.category] || 0) + 1;
+    });
+
+    CATEGORIES.forEach(cat => {
+      // Only show categories that have cars
+      if (cat !== 'All' && !counts[cat]) return;
+
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
+      btn.dataset.cat = cat;
+      const n = cat === 'All' ? CARS.length : (counts[cat] || 0);
+      btn.textContent = cat + ' (' + n + ')';
+      btn.addEventListener('click', () => setFilter(cat));
+      filterBar.appendChild(btn);
+    });
+  }
+
+  // ── Set active filter ──────────────────────────────────────────
+  function setFilter(cat) {
+    activeCategory = cat;
+    filterBar.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.cat === cat);
+    });
+    renderCards();
+  }
+
+  // ── Render cards ───────────────────────────────────────────────
+  function renderCards() {
+    const filtered = activeCategory === 'All'
+      ? CARS
+      : CARS.filter(c => c.category === activeCategory);
+
+    carGrid.innerHTML = '';
+
+    if (!filtered.length) {
+      carGrid.innerHTML = '<div class="no-results">No cars found in this category.</div>';
+      resultCount.textContent = '';
+      return;
+    }
+
+    resultCount.textContent = filtered.length + ' restoration' + (filtered.length !== 1 ? 's' : '');
+
+    filtered.forEach(car => {
+      const imgSrc = car.firstImage ? IMG_ROOT + car.firstImage : FALLBACK;
+
+      const a = document.createElement('a');
+      a.className = 'car-card';
+      a.href = 'cars/' + car.slug + '.html';
+
+      a.innerHTML =
+        '<div class="car-card-img-wrap">' +
+          '<img src="' + imgSrc + '" alt="' + car.title + '">' +
+        '</div>' +
+        '<div class="car-card-body">' +
+          '<div class="car-card-cat">' + car.category + '</div>' +
+          '<div class="car-card-title">' + car.title + '</div>' +
+          '<div class="car-card-count">' + car.imageCount + ' photo' + (car.imageCount !== 1 ? 's' : '') + '</div>' +
+        '</div>';
+
+      carGrid.appendChild(a);
+    });
+  }
+
+  // ── Init ────────────────────────────────────────────────────────
+  buildFilters();
+
+  // Pre-set filter from ?cat=X URL param
+  const urlCat = new URLSearchParams(window.location.search).get('cat');
+  if (urlCat) {
+    const decoded = decodeURIComponent(urlCat);
+    const match = CATEGORIES.find(c => c.toLowerCase() === decoded.toLowerCase());
+    if (match && match !== 'All') {
+      activeCategory = match;
+      filterBar.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.cat === match);
+      });
+    }
+  }
+
+  renderCards();
+
+  // Scroll to gallery if #gallery hash present
+  if (window.location.hash === '#gallery') {
+    setTimeout(() => {
+      const el = document.getElementById('gallery');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 150);
+  }
+})();
+</script>
+</body>
+</html>
