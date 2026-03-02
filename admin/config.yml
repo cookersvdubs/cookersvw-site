@@ -1,0 +1,74 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # --------------------------------------------------
+  # Collection 1 — Car Builds
+  # --------------------------------------------------
+  - name: "builds"
+    label: "Car Builds"
+    folder: "_builds"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options:
+          - { label: "Completed", value: "completed" }
+          - { label: "In Progress", value: "in-progress" }
+          - { label: "Personal Ride", value: "personal-ride" }
+      - label: "Model"
+        name: "model"
+        widget: "select"
+        options:
+          - { label: "Beetle", value: "Beetle" }
+          - { label: "Bus / Transporter", value: "Bus-Transporter" }
+          - { label: "Karmann Ghia", value: "Karmann-Ghia" }
+          - { label: "Type 3", value: "Type-3" }
+          - { label: "Single Cab", value: "Single-Cab" }
+          - { label: "Double Cab", value: "Double-Cab" }
+          - { label: "Thing", value: "Thing" }
+          - { label: "Custom / Hot Rod", value: "Custom-Hot-Rod" }
+          - { label: "Porsche 356", value: "Porsche-356" }
+          - { label: "Panel Van", value: "Panel-Van" }
+      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Hero Image", name: "hero_image", widget: "image" }
+      - label: "Photo Gallery"
+        name: "gallery"
+        widget: "list"
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
+          - { label: "Sort Order", name: "sort_order", widget: "number", default: 0, value_type: "int" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+
+  # --------------------------------------------------
+  # Collection 2 — Static Pages
+  # --------------------------------------------------
+  - name: "pages"
+    label: "Static Pages"
+    files:
+      - label: "About"
+        name: "about"
+        file: "about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "testimonials.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Contact"
+        name: "contact"
+        file: "contact.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
