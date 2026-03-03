@@ -2,8 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# Media settings - images stored as filenames only, template adds path prefix
 media_folder: "optimized_images"
-public_folder: "/optimized_images"
+public_folder: ""
 
 collections:
   # --------------------------------------------------
@@ -44,6 +45,9 @@ collections:
       - label: "Photo Gallery"
         name: "gallery"
         widget: "list"
+        collapsed: true
+        minimize_collapsed: true
+        summary: "{{fields.image}}"
         fields:
           - { label: "Image", name: "image", widget: "image" }
           - { label: "Caption", name: "caption", widget: "string", required: false }

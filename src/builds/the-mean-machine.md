@@ -1,7 +1,7 @@
 ---
 layout: layouts/car.njk
 title: "The Mean Machine"
-status: "completed"
+status: "personal-ride"
 model: "Custom-Hot-Rod"
 description: ""
 hero_image: "7748520.jpg"

@@ -1,7 +1,7 @@
 ---
 layout: layouts/car.njk
 title: "Brown Kombi"
-status: "completed"
+status: "personal-ride"
 model: "Bus-Transporter"
 description: ""
 hero_image: "8671445.jpg"

@@ -1,8 +1,8 @@
 ---
 layout: layouts/car.njk
 title: "Robert's '59 SC"
-status: "completed"
-model: "Beetle"
+status: "personal-ride"
+model: "Single-Cab"
 description: ""
 hero_image: "img-3062_1.jpg"
 featured: false

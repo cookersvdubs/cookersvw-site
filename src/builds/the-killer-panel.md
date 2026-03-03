@@ -1,7 +1,7 @@
 ---
 layout: layouts/car.njk
 title: "The Killer Panel"
-status: "completed"
+status: "personal-ride"
 model: "Panel-Van"
 description: ""
 hero_image: "1_3.jpg"

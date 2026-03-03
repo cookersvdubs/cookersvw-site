@@ -1,7 +1,7 @@
 ---
 layout: layouts/car.njk
 title: "The Killer Kombi"
-status: "completed"
+status: "personal-ride"
 model: "Bus-Transporter"
 description: ""
 hero_image: "8266087.jpg"

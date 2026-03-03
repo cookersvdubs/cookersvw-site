@@ -1,8 +1,8 @@
 ---
 layout: layouts/car.njk
 title: "'50 Sleeper Split"
-status: "completed"
-model: "Beetle"
+status: "personal-ride"
+model: "Bus-Transporter"
 description: ""
 hero_image: "1405858.jpg"
 featured: false
