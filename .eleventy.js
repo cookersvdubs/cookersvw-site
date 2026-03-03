@@ -23,6 +23,18 @@ module.exports = function(eleventyConfig) {
     return arr ? arr.length : 0;
   });
 
+  // Image URL filter - handles both Cloudinary URLs and local filenames
+  // If already a full URL, returns as-is. Otherwise prepends local path.
+  eleventyConfig.addFilter("imageUrl", function(image) {
+    if (!image) return '';
+    // If already a full URL (Cloudinary or other), use as-is
+    if (image.startsWith('http://') || image.startsWith('https://')) {
+      return image;
+    }
+    // Otherwise, prepend local path
+    return `../optimized_images/${image}`;
+  });
+
   // Filter to get status CSS class
   eleventyConfig.addFilter("statusClass", function(status) {
     const map = {

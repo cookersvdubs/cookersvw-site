@@ -4,143 +4,143 @@ title: "1955 Ragtop"
 status: "in-progress"
 model: "Beetle"
 description: ""
-hero_image: "img-e3216.jpg"
+hero_image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568778/cookersvdubs/img-e3216.jpg"
 featured: false
 permalink: "cars/1955-ragtop.html"
 gallery:
-  - image: "img-e3216.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568778/cookersvdubs/img-e3216.jpg"
     caption: ""
     sort_order: 0
-  - image: "img-e3217.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568779/cookersvdubs/img-e3217.jpg"
     caption: ""
     sort_order: 1
-  - image: "img-e3218.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568780/cookersvdubs/img-e3218.jpg"
     caption: ""
     sort_order: 2
-  - image: "img-e3219.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568780/cookersvdubs/img-e3219.jpg"
     caption: ""
     sort_order: 3
-  - image: "img-e3220.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568781/cookersvdubs/img-e3220.jpg"
     caption: ""
     sort_order: 4
-  - image: "img-e3221.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568782/cookersvdubs/img-e3221.jpg"
     caption: ""
     sort_order: 5
-  - image: "img-e3222.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568783/cookersvdubs/img-e3222.jpg"
     caption: ""
     sort_order: 6
-  - image: "img-e3223.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568783/cookersvdubs/img-e3223.jpg"
     caption: ""
     sort_order: 7
-  - image: "img-e3224.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568784/cookersvdubs/img-e3224.jpg"
     caption: ""
     sort_order: 8
-  - image: "img-e3225.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568785/cookersvdubs/img-e3225.jpg"
     caption: ""
     sort_order: 9
-  - image: "img-e3226.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568786/cookersvdubs/img-e3226.jpg"
     caption: ""
     sort_order: 10
-  - image: "img-e3227.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568786/cookersvdubs/img-e3227.jpg"
     caption: ""
     sort_order: 11
-  - image: "img-e3228.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568787/cookersvdubs/img-e3228.jpg"
     caption: ""
     sort_order: 12
-  - image: "img-e3229.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568788/cookersvdubs/img-e3229.jpg"
     caption: ""
     sort_order: 13
-  - image: "img-e3230.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568788/cookersvdubs/img-e3230.jpg"
     caption: ""
     sort_order: 14
-  - image: "img-e3231.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568790/cookersvdubs/img-e3231.jpg"
     caption: ""
     sort_order: 15
-  - image: "img-e3232.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568791/cookersvdubs/img-e3232.jpg"
     caption: ""
     sort_order: 16
-  - image: "img-e3316.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568793/cookersvdubs/img-e3316.jpg"
     caption: ""
     sort_order: 17
-  - image: "img-e3317.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568794/cookersvdubs/img-e3317.jpg"
     caption: ""
     sort_order: 18
-  - image: "img-e3318.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568794/cookersvdubs/img-e3318.jpg"
     caption: ""
     sort_order: 19
-  - image: "img-e3319.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568795/cookersvdubs/img-e3319.jpg"
     caption: ""
     sort_order: 20
-  - image: "img-e3320.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568796/cookersvdubs/img-e3320.jpg"
     caption: ""
     sort_order: 21
-  - image: "img-e3321.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568797/cookersvdubs/img-e3321.jpg"
     caption: ""
     sort_order: 22
-  - image: "img-e3322.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568798/cookersvdubs/img-e3322.jpg"
     caption: ""
     sort_order: 23
-  - image: "img-e3323.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568798/cookersvdubs/img-e3323.jpg"
     caption: ""
     sort_order: 24
-  - image: "img-e3324.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568799/cookersvdubs/img-e3324.jpg"
     caption: ""
     sort_order: 25
-  - image: "img-e3325.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568800/cookersvdubs/img-e3325.jpg"
     caption: ""
     sort_order: 26
-  - image: "img-e3326.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568800/cookersvdubs/img-e3326.jpg"
     caption: ""
     sort_order: 27
-  - image: "img-e3327.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568801/cookersvdubs/img-e3327.jpg"
     caption: ""
     sort_order: 28
-  - image: "img-e3328.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568802/cookersvdubs/img-e3328.jpg"
     caption: ""
     sort_order: 29
-  - image: "img-e3559.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568802/cookersvdubs/img-e3559.jpg"
     caption: ""
     sort_order: 30
-  - image: "img-e3560.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568803/cookersvdubs/img-e3560.jpg"
     caption: ""
     sort_order: 31
-  - image: "img-e3561.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568804/cookersvdubs/img-e3561.jpg"
     caption: ""
     sort_order: 32
-  - image: "img-e3562.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568804/cookersvdubs/img-e3562.jpg"
     caption: ""
     sort_order: 33
-  - image: "img-e3563.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568805/cookersvdubs/img-e3563.jpg"
     caption: ""
     sort_order: 34
-  - image: "img-e3564.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568806/cookersvdubs/img-e3564.jpg"
     caption: ""
     sort_order: 35
-  - image: "img-e3565.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568807/cookersvdubs/img-e3565.jpg"
     caption: ""
     sort_order: 36
-  - image: "img-e3566.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568807/cookersvdubs/img-e3566.jpg"
     caption: ""
     sort_order: 37
-  - image: "img-e3567.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568808/cookersvdubs/img-e3567.jpg"
     caption: ""
     sort_order: 38
-  - image: "img-e3568.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568808/cookersvdubs/img-e3568.jpg"
     caption: ""
     sort_order: 39
-  - image: "img-e4096.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568809/cookersvdubs/img-e4096.jpg"
     caption: ""
     sort_order: 40
-  - image: "img-e4097.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568810/cookersvdubs/img-e4097.jpg"
     caption: ""
     sort_order: 41
-  - image: "img-e4098.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568810/cookersvdubs/img-e4098.jpg"
     caption: ""
     sort_order: 42
-  - image: "img-e4099.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568811/cookersvdubs/img-e4099.jpg"
     caption: ""
     sort_order: 43
-  - image: "img-e4100.jpg"
+  - image: "https://res.cloudinary.com/ds3b5nqnd/image/upload/v1772568812/cookersvdubs/img-e4100.jpg"
     caption: ""
     sort_order: 44
 ---

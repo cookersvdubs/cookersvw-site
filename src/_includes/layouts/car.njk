@@ -31,7 +31,7 @@
 
 <!-- CAR HERO -->
 <div class="car-hero">
-  <img src="../optimized_images/{{ hero_image | default(gallery[0].image if gallery and gallery[0] else 'header_images/1425922475.jpg') }}" alt="{{ title }}"
+  <img src="{{ (hero_image | default(gallery[0].image if gallery and gallery[0] else 'header_images/1425922475.jpg')) | imageUrl }}" alt="{{ title }}"
     onerror="this.src='../optimized_images/header_images/1425922475.jpg'"/>
   <div class="car-hero-overlay"></div>
   <div class="car-hero-content">
@@ -60,10 +60,10 @@
   <div class="thumb-grid">
     {% for photo in gallery %}
     <div class="thumb-item"
-         data-src="../optimized_images/{{ photo.image }}"
-         data-full-src="../optimized_images/{{ photo.image }}"
+         data-src="{{ photo.image | imageUrl }}"
+         data-full-src="{{ photo.image | imageUrl }}"
          data-alt="{{ title }}{% if photo.caption %} - {{ photo.caption }}{% endif %}">
-      <img src="../optimized_images/{{ photo.image }}" alt="{{ title }}{% if photo.caption %} - {{ photo.caption }}{% endif %}" loading="lazy"/>
+      <img src="{{ photo.image | imageUrl }}" alt="{{ title }}{% if photo.caption %} - {{ photo.caption }}{% endif %}" loading="lazy"/>
       <div class="thumb-overlay">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round"
