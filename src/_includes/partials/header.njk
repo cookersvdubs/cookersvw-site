@@ -1,0 +1,77 @@
+<!-- HEADER -->
+<header>
+  <a href="{{ '../' if isCarPage else '' }}index.html" class="logo">
+    <div class="logo-badge">CR&amp;F</div>
+    <div class="logo-text">
+      <strong>Cooker's</strong>
+      <span>Restoration &amp; Fabrication · Williamsport, MD</span>
+    </div>
+  </a>
+  <nav>
+    <div class="nav-item has-dropdown">
+      <a href="{{ '../' if isCarPage else '' }}our-work.html">Our Work <span class="nav-caret">&#9662;</span></a>
+      <div class="nav-dropdown">
+        <a href="{{ '../' if isCarPage else '' }}our-work.html#gallery">All Completed Restorations</a>
+        <div class="dropdown-divider"></div>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Beetle#gallery">Beetle</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Bus#gallery">Bus / Transporter</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Karmann+Ghia#gallery">Karmann Ghia</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Thing#gallery">Thing</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Double+Cab#gallery">Double Cab</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Single+Cab#gallery">Single Cab</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Panel#gallery">Panel Van</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Type+3#gallery">Type 3</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Custom+%2F+Hot+Rod#gallery">Custom / Hot Rod</a>
+        <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Porsche+356#gallery">Porsche 356</a>
+      </div>
+    </div>
+    <div class="nav-item has-dropdown">
+      <a href="{{ '../' if isCarPage else '' }}the-cars.html">The Cars <span class="nav-caret">&#9662;</span></a>
+      <div class="nav-dropdown">
+        <a href="{{ '../' if isCarPage else '' }}our-work.html">Completed Builds</a>
+        <a href="{{ '../' if isCarPage else '' }}the-cars.html#in-progress">In Progress</a>
+        <a href="{{ '../' if isCarPage else '' }}the-cars.html#personal">Personal Rides</a>
+      </div>
+    </div>
+    <a href="{{ '../' if isCarPage else '' }}videos.html">Videos</a>
+    <a href="{{ '../' if isCarPage else '' }}about.html">About</a>
+    <a href="{{ '../' if isCarPage else '' }}testimonials.html">Testimonials</a>
+    <a href="{{ '../' if isCarPage else '' }}open-houses.html">Open Houses</a>
+    <a href="{{ '../' if isCarPage else '' }}contact.html" class="cta">Contact Us</a>
+  </nav>
+  <button class="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav">
+  <div class="has-sub">
+    <a href="{{ '../' if isCarPage else '' }}our-work.html">Our Work <span class="nav-caret">&#9662;</span></a>
+    <div class="mobile-sub">
+      <a href="{{ '../' if isCarPage else '' }}our-work.html#gallery">All Restorations</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Beetle#gallery">Beetle</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Bus#gallery">Bus / Transporter</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Karmann+Ghia#gallery">Karmann Ghia</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Thing#gallery">Thing</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Double+Cab#gallery">Double Cab</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Single+Cab#gallery">Single Cab</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Panel#gallery">Panel Van</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Custom+%2F+Hot+Rod#gallery">Custom / Hot Rod</a>
+      <a href="{{ '../' if isCarPage else '' }}our-work.html?cat=Porsche+356#gallery">Porsche 356</a>
+    </div>
+  </div>
+  <div class="has-sub">
+    <a href="{{ '../' if isCarPage else '' }}the-cars.html">The Cars <span class="nav-caret">&#9662;</span></a>
+    <div class="mobile-sub">
+      <a href="{{ '../' if isCarPage else '' }}our-work.html">Completed Builds</a>
+      <a href="{{ '../' if isCarPage else '' }}the-cars.html#in-progress">In Progress</a>
+      <a href="{{ '../' if isCarPage else '' }}the-cars.html#personal">Personal Rides</a>
+    </div>
+  </div>
+  <a href="{{ '../' if isCarPage else '' }}videos.html">Videos</a>
+  <a href="{{ '../' if isCarPage else '' }}about.html">About</a>
+  <a href="{{ '../' if isCarPage else '' }}testimonials.html">Testimonials</a>
+  <a href="{{ '../' if isCarPage else '' }}open-houses.html">Open Houses</a>
+  <a href="{{ '../' if isCarPage else '' }}contact.html" class="cta">Contact Us &rarr;</a>
+</nav>

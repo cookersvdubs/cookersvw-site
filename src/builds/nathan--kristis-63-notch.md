@@ -1,0 +1,401 @@
+---
+layout: layouts/car.njk
+title: "Nathan &amp; Kristi's '63 Notch"
+status: "completed"
+model: "Type-3"
+description: ""
+hero_image: "img-2186.jpg"
+featured: false
+permalink: "cars/nathan--kristis-63-notch.html"
+gallery:
+  - image: "img-2186.jpg"
+    caption: ""
+    sort_order: 0
+  - image: "img-2187.jpg"
+    caption: ""
+    sort_order: 1
+  - image: "img-2188.jpg"
+    caption: ""
+    sort_order: 2
+  - image: "img-2189.jpg"
+    caption: ""
+    sort_order: 3
+  - image: "img-2190.jpg"
+    caption: ""
+    sort_order: 4
+  - image: "img-2191.jpg"
+    caption: ""
+    sort_order: 5
+  - image: "img-2192.jpg"
+    caption: ""
+    sort_order: 6
+  - image: "img-2193.jpg"
+    caption: ""
+    sort_order: 7
+  - image: "img-2194.jpg"
+    caption: ""
+    sort_order: 8
+  - image: "img-2195.jpg"
+    caption: ""
+    sort_order: 9
+  - image: "img-2196.jpg"
+    caption: ""
+    sort_order: 10
+  - image: "img-2197.jpg"
+    caption: ""
+    sort_order: 11
+  - image: "img-2198.jpg"
+    caption: ""
+    sort_order: 12
+  - image: "img-2199.jpg"
+    caption: ""
+    sort_order: 13
+  - image: "img-2200.jpg"
+    caption: ""
+    sort_order: 14
+  - image: "img-2201.jpg"
+    caption: ""
+    sort_order: 15
+  - image: "img-2202.jpg"
+    caption: ""
+    sort_order: 16
+  - image: "img-2203.jpg"
+    caption: ""
+    sort_order: 17
+  - image: "img-2206.jpg"
+    caption: ""
+    sort_order: 18
+  - image: "img-2207.jpg"
+    caption: ""
+    sort_order: 19
+  - image: "img-2208.jpg"
+    caption: ""
+    sort_order: 20
+  - image: "img-2209.jpg"
+    caption: ""
+    sort_order: 21
+  - image: "img-2210.jpg"
+    caption: ""
+    sort_order: 22
+  - image: "img-8867.jpg"
+    caption: ""
+    sort_order: 23
+  - image: "img-8868.jpg"
+    caption: ""
+    sort_order: 24
+  - image: "img-8869.jpg"
+    caption: ""
+    sort_order: 25
+  - image: "img-8870.jpg"
+    caption: ""
+    sort_order: 26
+  - image: "img-8872.jpg"
+    caption: ""
+    sort_order: 27
+  - image: "img-e8913.jpg"
+    caption: ""
+    sort_order: 28
+  - image: "img-e8914.jpg"
+    caption: ""
+    sort_order: 29
+  - image: "img-e8915.jpg"
+    caption: ""
+    sort_order: 30
+  - image: "img-e8916.jpg"
+    caption: ""
+    sort_order: 31
+  - image: "img-e8917.jpg"
+    caption: ""
+    sort_order: 32
+  - image: "img-e8918.jpg"
+    caption: ""
+    sort_order: 33
+  - image: "img-e8919.jpg"
+    caption: ""
+    sort_order: 34
+  - image: "img-e8920.jpg"
+    caption: ""
+    sort_order: 35
+  - image: "img-e9023.jpg"
+    caption: ""
+    sort_order: 36
+  - image: "img-e9024.jpg"
+    caption: ""
+    sort_order: 37
+  - image: "img-e9025.jpg"
+    caption: ""
+    sort_order: 38
+  - image: "img-e9026.jpg"
+    caption: ""
+    sort_order: 39
+  - image: "img-e9027.jpg"
+    caption: ""
+    sort_order: 40
+  - image: "img-e9028.jpg"
+    caption: ""
+    sort_order: 41
+  - image: "img-e9029.jpg"
+    caption: ""
+    sort_order: 42
+  - image: "img-e9030.jpg"
+    caption: ""
+    sort_order: 43
+  - image: "img-e9031.jpg"
+    caption: ""
+    sort_order: 44
+  - image: "img-e9032.jpg"
+    caption: ""
+    sort_order: 45
+  - image: "img-e9033.jpg"
+    caption: ""
+    sort_order: 46
+  - image: "img-e9034.jpg"
+    caption: ""
+    sort_order: 47
+  - image: "img-e9035.jpg"
+    caption: ""
+    sort_order: 48
+  - image: "img-e9036.jpg"
+    caption: ""
+    sort_order: 49
+  - image: "img-e9037.jpg"
+    caption: ""
+    sort_order: 50
+  - image: "img-e9038.jpg"
+    caption: ""
+    sort_order: 51
+  - image: "img-e9039.jpg"
+    caption: ""
+    sort_order: 52
+  - image: "img-e9040.jpg"
+    caption: ""
+    sort_order: 53
+  - image: "img-e9041.jpg"
+    caption: ""
+    sort_order: 54
+  - image: "img-e9042.jpg"
+    caption: ""
+    sort_order: 55
+  - image: "img-e9043.jpg"
+    caption: ""
+    sort_order: 56
+  - image: "img-e9044.jpg"
+    caption: ""
+    sort_order: 57
+  - image: "img-e9045.jpg"
+    caption: ""
+    sort_order: 58
+  - image: "img-e9046.jpg"
+    caption: ""
+    sort_order: 59
+  - image: "img-e9047.jpg"
+    caption: ""
+    sort_order: 60
+  - image: "img-e9048.jpg"
+    caption: ""
+    sort_order: 61
+  - image: "img-e9049.jpg"
+    caption: ""
+    sort_order: 62
+  - image: "img-e9050.jpg"
+    caption: ""
+    sort_order: 63
+  - image: "img-e9051.jpg"
+    caption: ""
+    sort_order: 64
+  - image: "img-e9052.jpg"
+    caption: ""
+    sort_order: 65
+  - image: "img-e9053.jpg"
+    caption: ""
+    sort_order: 66
+  - image: "img-e9054.jpg"
+    caption: ""
+    sort_order: 67
+  - image: "img-e9055.jpg"
+    caption: ""
+    sort_order: 68
+  - image: "img-e9056.jpg"
+    caption: ""
+    sort_order: 69
+  - image: "img-e9057.jpg"
+    caption: ""
+    sort_order: 70
+  - image: "img-e9058.jpg"
+    caption: ""
+    sort_order: 71
+  - image: "img-e9059.jpg"
+    caption: ""
+    sort_order: 72
+  - image: "img-e9060.jpg"
+    caption: ""
+    sort_order: 73
+  - image: "img-e9061.jpg"
+    caption: ""
+    sort_order: 74
+  - image: "img-e9062.jpg"
+    caption: ""
+    sort_order: 75
+  - image: "img-e9063.jpg"
+    caption: ""
+    sort_order: 76
+  - image: "img-e9064.jpg"
+    caption: ""
+    sort_order: 77
+  - image: "img-e9065.jpg"
+    caption: ""
+    sort_order: 78
+  - image: "img-e9066.jpg"
+    caption: ""
+    sort_order: 79
+  - image: "img-e9067.jpg"
+    caption: ""
+    sort_order: 80
+  - image: "img-e9068.jpg"
+    caption: ""
+    sort_order: 81
+  - image: "img-e9069.jpg"
+    caption: ""
+    sort_order: 82
+  - image: "img-e9070.jpg"
+    caption: ""
+    sort_order: 83
+  - image: "img-e9071.jpg"
+    caption: ""
+    sort_order: 84
+  - image: "img-e9072.jpg"
+    caption: ""
+    sort_order: 85
+  - image: "img-e9208.jpg"
+    caption: ""
+    sort_order: 86
+  - image: "img-e9209.jpg"
+    caption: ""
+    sort_order: 87
+  - image: "img-e9210.jpg"
+    caption: ""
+    sort_order: 88
+  - image: "img-e9211.jpg"
+    caption: ""
+    sort_order: 89
+  - image: "img-e9212.jpg"
+    caption: ""
+    sort_order: 90
+  - image: "img-e9213.jpg"
+    caption: ""
+    sort_order: 91
+  - image: "img-e9214.jpg"
+    caption: ""
+    sort_order: 92
+  - image: "img-e9215.jpg"
+    caption: ""
+    sort_order: 93
+  - image: "img-e9216.jpg"
+    caption: ""
+    sort_order: 94
+  - image: "img-e9217.jpg"
+    caption: ""
+    sort_order: 95
+  - image: "img-e9218.jpg"
+    caption: ""
+    sort_order: 96
+  - image: "img-e9219.jpg"
+    caption: ""
+    sort_order: 97
+  - image: "img-e9220.jpg"
+    caption: ""
+    sort_order: 98
+  - image: "img-e9221.jpg"
+    caption: ""
+    sort_order: 99
+  - image: "img-e9222.jpg"
+    caption: ""
+    sort_order: 100
+  - image: "img-e9223.jpg"
+    caption: ""
+    sort_order: 101
+  - image: "img-e9224.jpg"
+    caption: ""
+    sort_order: 102
+  - image: "img-e9225.jpg"
+    caption: ""
+    sort_order: 103
+  - image: "img-e9226.jpg"
+    caption: ""
+    sort_order: 104
+  - image: "img-e9227.jpg"
+    caption: ""
+    sort_order: 105
+  - image: "img-e9228.jpg"
+    caption: ""
+    sort_order: 106
+  - image: "img-e9229.jpg"
+    caption: ""
+    sort_order: 107
+  - image: "img-e9230.jpg"
+    caption: ""
+    sort_order: 108
+  - image: "img-e9231.jpg"
+    caption: ""
+    sort_order: 109
+  - image: "img-e9232.jpg"
+    caption: ""
+    sort_order: 110
+  - image: "img-e9233.jpg"
+    caption: ""
+    sort_order: 111
+  - image: "img-e9234.jpg"
+    caption: ""
+    sort_order: 112
+  - image: "img-e9235.jpg"
+    caption: ""
+    sort_order: 113
+  - image: "img-e9236.jpg"
+    caption: ""
+    sort_order: 114
+  - image: "img-e9237.jpg"
+    caption: ""
+    sort_order: 115
+  - image: "img-e9238.jpg"
+    caption: ""
+    sort_order: 116
+  - image: "img-e9239.jpg"
+    caption: ""
+    sort_order: 117
+  - image: "img-9196.jpg"
+    caption: ""
+    sort_order: 118
+  - image: "img-9197.jpg"
+    caption: ""
+    sort_order: 119
+  - image: "617067475-1298081312348948-1558092315055183997-n.jpg"
+    caption: ""
+    sort_order: 120
+  - image: "617088580-1298081172348962-1143728744583065475-n.jpg"
+    caption: ""
+    sort_order: 121
+  - image: "617719989-1298081319015614-9159947358715847325-n.jpg"
+    caption: ""
+    sort_order: 122
+  - image: "617869494-1298081245682288-2638626539988839887-n.jpg"
+    caption: ""
+    sort_order: 123
+  - image: "618083255-1298081162348963-4938428910180973630-n.jpg"
+    caption: ""
+    sort_order: 124
+  - image: "618204836-1298081372348942-8294211447533208220-n.jpg"
+    caption: ""
+    sort_order: 125
+  - image: "618378586-1298081235682289-6461683155468566332-n.jpg"
+    caption: ""
+    sort_order: 126
+  - image: "img-9640.jpg"
+    caption: ""
+    sort_order: 127
+  - image: "img-9641.jpg"
+    caption: ""
+    sort_order: 128
+  - image: "img-9642.jpg"
+    caption: ""
+    sort_order: 129
+---

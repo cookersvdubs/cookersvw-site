@@ -2,8 +2,8 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "optimized_images"
+public_folder: "/optimized_images"
 
 collections:
   # --------------------------------------------------
@@ -11,10 +11,12 @@ collections:
   # --------------------------------------------------
   - name: "builds"
     label: "Car Builds"
-    folder: "_builds"
+    folder: "src/builds"
     create: true
     slug: "{{slug}}"
+    extension: "md"
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/car.njk" }
       - { label: "Title", name: "title", widget: "string" }
       - label: "Status"
         name: "status"
@@ -37,7 +39,7 @@ collections:
           - { label: "Custom / Hot Rod", value: "Custom-Hot-Rod" }
           - { label: "Porsche 356", value: "Porsche-356" }
           - { label: "Panel Van", value: "Panel-Van" }
-      - { label: "Description", name: "description", widget: "markdown" }
+      - { label: "Description", name: "description", widget: "markdown", required: false }
       - { label: "Hero Image", name: "hero_image", widget: "image" }
       - label: "Photo Gallery"
         name: "gallery"

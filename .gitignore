@@ -9,3 +9,9 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# Node / Eleventy
+node_modules/
+_site/
+.cache/
+package-lock.json
