@@ -25,9 +25,9 @@ collections:
     create: true
     slug: "{{slug}}"
     extension: "md"
-    # Editor preview disabled for performance
+    # Live preview enabled - Cloudinary CDN makes this fast
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/car.njk" }
 
@@ -65,11 +65,11 @@ collections:
 
       - label: "Hero Image"
         name: "hero_image"
-        widget: "string"
-        hint: "Filename from optimized_images folder (e.g. img-1234.jpg)"
+        widget: "image"
+        hint: "Main image shown at top of page"
 
       # === PHOTO GALLERY ===
-      # Uses string widget instead of image widget — no thumbnails = instant load
+      # Image widget with Cloudinary CDN - fast loading with thumbnails
       - label: "Photo Gallery"
         name: "gallery"
         widget: "list"
@@ -77,9 +77,9 @@ collections:
         collapsed: true
         minimize_collapsed: true
         summary: "{{fields.image}}"
-        hint: "Drag to reorder. Filenames from optimized_images folder."
+        hint: "Drag to reorder photos"
         fields:
-          - { label: "Filename", name: "image", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
           - { label: "Caption", name: "caption", widget: "string", required: false }
           - { label: "Sort Order", name: "sort_order", widget: "hidden", default: 0 }
 
