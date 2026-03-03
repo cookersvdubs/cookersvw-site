@@ -2,13 +2,13 @@ backend:
   name: git-gateway
   branch: main
 
-# Media settings - images stored as filenames only, template adds path prefix
+# Media settings
 media_folder: "optimized_images"
 public_folder: ""
 
 collections:
   # --------------------------------------------------
-  # Collection 1 — Car Builds
+  # Car Builds — Optimized for fast editing
   # --------------------------------------------------
   - name: "builds"
     label: "Car Builds"
@@ -16,9 +16,15 @@ collections:
     create: true
     slug: "{{slug}}"
     extension: "md"
+    # Editor preview disabled for performance
+    editor:
+      preview: false
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/car.njk" }
-      - { label: "Title", name: "title", widget: "string" }
+
+      # === ESSENTIAL FIELDS ===
+      - { label: "Title", name: "title", widget: "string", hint: "e.g. John's '67 Beetle" }
+
       - label: "Status"
         name: "status"
         widget: "select"
@@ -26,6 +32,7 @@ collections:
           - { label: "Completed", value: "completed" }
           - { label: "In Progress", value: "in-progress" }
           - { label: "Personal Ride", value: "personal-ride" }
+
       - label: "Model"
         name: "model"
         widget: "select"
@@ -40,19 +47,35 @@ collections:
           - { label: "Custom / Hot Rod", value: "Custom-Hot-Rod" }
           - { label: "Porsche 356", value: "Porsche-356" }
           - { label: "Panel Van", value: "Panel-Van" }
-      - { label: "Description", name: "description", widget: "markdown", required: false }
-      - { label: "Hero Image", name: "hero_image", widget: "image" }
+
+      - label: "Description"
+        name: "description"
+        widget: "text"
+        required: false
+        hint: "Optional short description for this build"
+
+      - label: "Hero Image"
+        name: "hero_image"
+        widget: "string"
+        hint: "Filename from optimized_images folder (e.g. img-1234.jpg)"
+
+      # === PHOTO GALLERY ===
+      # Uses string widget instead of image widget — no thumbnails = instant load
       - label: "Photo Gallery"
         name: "gallery"
         widget: "list"
+        label_singular: "Photo"
         collapsed: true
         minimize_collapsed: true
         summary: "{{fields.image}}"
+        hint: "Drag to reorder. Filenames from optimized_images folder."
         fields:
-          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Filename", name: "image", widget: "string" }
           - { label: "Caption", name: "caption", widget: "string", required: false }
-          - { label: "Sort Order", name: "sort_order", widget: "number", default: 0, value_type: "int" }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+          - { label: "Sort Order", name: "sort_order", widget: "hidden", default: 0 }
+
+      # === HIDDEN/PRESERVED FIELDS ===
+      - { label: "Featured", name: "featured", widget: "hidden", default: false }
 
   # --------------------------------------------------
   # Collection 2 — Static Pages
