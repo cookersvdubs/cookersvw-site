@@ -2,18 +2,16 @@ backend:
   name: git-gateway
   branch: main
 
-# Cloudinary media library
-# Note: API secret is NOT included here (only in .env for upload scripts)
-# TODO: Replace YOUR_API_KEY with actual Cloudinary API key from dashboard
+# Cloudinary media library integration
+# Images are stored and served from Cloudinary CDN
 media_library:
   name: cloudinary
   config:
     cloud_name: ds3b5nqnd
     api_key: 783146736326875
-
-# Fallback for local uploads (if Cloudinary not configured)
-media_folder: "optimized_images"
-public_folder: ""
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
 
 collections:
   # --------------------------------------------------
