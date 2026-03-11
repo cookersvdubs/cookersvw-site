@@ -31,6 +31,10 @@ module.exports = function(eleventyConfig) {
     if (image.startsWith('http://') || image.startsWith('https://')) {
       return image;
     }
+    // Cloudinary public ID (e.g. cookersvdubs/img-e3216) — build full URL
+    if (image.startsWith('cookersvdubs/')) {
+      return `https://res.cloudinary.com/ds3b5nqnd/image/upload/${image}.jpg`;
+    }
     // Otherwise, prepend local path
     return `../optimized_images/${image}`;
   });
