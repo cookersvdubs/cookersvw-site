@@ -11,5 +11,61 @@
   <script src="https://unpkg.com/netlify-cms-media-library-cloudinary@^1.3.0/dist/index.js"></script>
   <!-- Netlify CMS -->
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+
+  <!-- Custom preview: resolve Cloudinary public IDs to full URLs -->
+  <script>
+    var CLOUD = 'ds3b5nqnd';
+    function cloudUrl(val) {
+      if (!val) return '';
+      if (val.startsWith('http')) return val;
+      if (val.startsWith('cookersvdubs/')) {
+        return 'https://res.cloudinary.com/' + CLOUD + '/image/upload/' + val + '.jpg';
+      }
+      return val;
+    }
+
+    var CarPreview = createClass({
+      render: function() {
+        var entry = this.props.entry;
+        var title = entry.getIn(['data', 'title']) || '';
+        var hero = cloudUrl(entry.getIn(['data', 'hero_image']) || '');
+        var status = entry.getIn(['data', 'status']) || '';
+        var desc = entry.getIn(['data', 'description']) || '';
+        var gallery = entry.getIn(['data', 'gallery']);
+
+        var imgStyle = { maxWidth: '100%', height: 'auto', display: 'block' };
+        var thumbStyle = { width: '200px', height: '150px', objectFit: 'cover', borderRadius: '4px' };
+        var gridStyle = { display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: '16px' };
+
+        var children = [
+          h('h1', {}, title),
+          h('p', { style: { color: '#666', textTransform: 'uppercase', fontSize: '12px', letterSpacing: '2px' } }, status),
+        ];
+
+        if (hero) {
+          children.push(h('img', { src: hero, alt: title, style: imgStyle }));
+        }
+        if (desc) {
+          children.push(h('p', { style: { marginTop: '16px', color: '#555' } }, desc));
+        }
+
+        if (gallery && gallery.size > 0) {
+          var thumbs = gallery.map(function(photo, i) {
+            var src = cloudUrl(photo.get('image') || '');
+            var caption = photo.get('caption') || '';
+            return h('div', { key: i, style: { textAlign: 'center' } },
+              src ? h('img', { src: src, alt: caption || title, style: thumbStyle }) : null,
+              caption ? h('div', { style: { fontSize: '11px', marginTop: '4px' } }, caption) : null
+            );
+          }).toArray();
+          children.push(h('div', { style: gridStyle }, thumbs));
+        }
+
+        return h('div', { style: { padding: '20px', fontFamily: 'sans-serif' } }, children);
+      }
+    });
+
+    CMS.registerPreviewTemplate('builds', CarPreview);
+  </script>
 </body>
 </html>
