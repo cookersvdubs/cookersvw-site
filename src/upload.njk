@@ -485,7 +485,7 @@ permalink: upload.html
     // Sanity config
     const SANITY_PROJECT_ID = 'wa7rzamu';
     const SANITY_DATASET = 'production';
-    const SANITY_API_VERSION = '2024-01-01';
+    const SANITY_API_VERSION = '2021-10-21';
 
     // DOM elements
     const carSelect = document.getElementById('carSelect');
@@ -510,8 +510,8 @@ permalink: upload.html
 
     // Fetch car builds from Sanity
     async function fetchCarBuilds() {
-      const query = encodeURIComponent('*[_type == "carBuild" && !(_id in path("drafts.**"))]{_id, title, slug} | order(title asc)');
-      const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${query}`;
+      const query = '*[_type=="carBuild"&&!(_id in path("drafts.**"))]{title,slug}|order(title asc)';
+      const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
 
       try {
         const response = await fetch(url);
