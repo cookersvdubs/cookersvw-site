@@ -1,0 +1,728 @@
+---
+permalink: upload.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Upload Photos — Cooker's Restoration &amp; Fabrication</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F5F0E8;
+      --cream-dark: #E8E2D6;
+      --vw-blue: #2D5F8A;
+      --vw-blue-dark: #1E4A6F;
+      --red: #C0392B;
+      --dark: #1A1A1A;
+      --mid-gray: #6B6B6B;
+      --light-gray: #9A9A9A;
+      --success: #27AE60;
+      --error: #C0392B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      color: var(--vw-blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--mid-gray);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .warning {
+      background: #FDF2F2;
+      border: 2px solid var(--red);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .warning-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .warning-text {
+      font-size: 0.9rem;
+      color: var(--red);
+      font-weight: 500;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      border: 2px solid var(--cream-dark);
+      border-radius: 6px;
+      background: white;
+      color: var(--dark);
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B6B6B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+
+    select:focus {
+      outline: none;
+      border-color: var(--vw-blue);
+    }
+
+    select:disabled {
+      background-color: var(--cream-dark);
+      cursor: not-allowed;
+    }
+
+    .dropzone {
+      border: 3px dashed var(--cream-dark);
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+      background: white;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .dropzone:hover,
+    .dropzone.dragover {
+      border-color: var(--vw-blue);
+      background: #F8FBFD;
+    }
+
+    .dropzone.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .dropzone-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .dropzone-text {
+      font-size: 1.1rem;
+      color: var(--dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .dropzone-hint {
+      font-size: 0.85rem;
+      color: var(--light-gray);
+    }
+
+    .dropzone input[type="file"] {
+      display: none;
+    }
+
+    .preview-section {
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .preview-section.visible {
+      display: block;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .preview-count {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      color: var(--dark);
+    }
+
+    .clear-btn {
+      background: none;
+      border: none;
+      color: var(--red);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .clear-btn:hover {
+      color: var(--vw-blue-dark);
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .preview-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+
+    .preview-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .preview-item .filename {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      font-size: 0.65rem;
+      padding: 0.3rem 0.4rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .preview-item .status-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.9);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .preview-item.uploading .status-overlay,
+    .preview-item.success .status-overlay,
+    .preview-item.error .status-overlay {
+      opacity: 1;
+    }
+
+    .preview-item.success .status-overlay {
+      background: rgba(39, 174, 96, 0.9);
+    }
+
+    .preview-item.error .status-overlay {
+      background: rgba(192, 57, 43, 0.9);
+    }
+
+    .status-icon {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid var(--cream-dark);
+      border-top-color: var(--vw-blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .upload-btn {
+      width: 100%;
+      padding: 1rem 2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 2px;
+      background: var(--vw-blue);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .upload-btn:hover:not(:disabled) {
+      background: var(--vw-blue-dark);
+    }
+
+    .upload-btn:disabled {
+      background: var(--light-gray);
+      cursor: not-allowed;
+    }
+
+    .progress-section {
+      margin-top: 1.5rem;
+      display: none;
+    }
+
+    .progress-section.visible {
+      display: block;
+    }
+
+    .progress-bar-container {
+      background: var(--cream-dark);
+      border-radius: 8px;
+      overflow: hidden;
+      height: 12px;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--vw-blue);
+      transition: width 0.3s ease;
+      width: 0%;
+    }
+
+    .progress-text {
+      font-size: 0.9rem;
+      color: var(--mid-gray);
+      text-align: center;
+    }
+
+    .completion-message {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      display: none;
+    }
+
+    .completion-message.visible {
+      display: block;
+    }
+
+    .completion-message.success {
+      background: #E8F8EF;
+      border: 2px solid var(--success);
+    }
+
+    .completion-message.partial {
+      background: #FEF9E7;
+      border: 2px solid #F39C12;
+    }
+
+    .completion-message h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .completion-message.success h3 {
+      color: var(--success);
+    }
+
+    .completion-message.partial h3 {
+      color: #F39C12;
+    }
+
+    .completion-message p {
+      font-size: 0.95rem;
+      color: var(--mid-gray);
+    }
+
+    .reset-btn {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      background: white;
+      color: var(--vw-blue);
+      border: 2px solid var(--vw-blue);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .reset-btn:hover {
+      background: var(--vw-blue);
+      color: white;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--vw-blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.5rem 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .dropzone {
+        padding: 2rem 1rem;
+      }
+
+      .preview-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload Photos</h1>
+    <p class="subtitle">Bulk upload photos for car build galleries</p>
+
+    <div class="warning">
+      <span class="warning-icon">&#9888;</span>
+      <span class="warning-text">Select the correct car before uploading — images cannot be easily moved after upload.</span>
+    </div>
+
+    <div class="form-group">
+      <label for="carSelect">Select Car Build</label>
+      <select id="carSelect" disabled>
+        <option value="">Loading car builds...</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Photos to Upload</label>
+      <div class="dropzone disabled" id="dropzone">
+        <div class="dropzone-icon">&#128247;</div>
+        <div class="dropzone-text">Drag &amp; drop photos here</div>
+        <div class="dropzone-hint">or click to browse (JPG, PNG only)</div>
+        <input type="file" id="fileInput" multiple accept="image/jpeg,image/png,.jpg,.jpeg,.png"/>
+      </div>
+    </div>
+
+    <div class="preview-section" id="previewSection">
+      <div class="preview-header">
+        <span class="preview-count" id="previewCount">0 photos selected</span>
+        <button class="clear-btn" id="clearBtn">Clear all</button>
+      </div>
+      <div class="preview-grid" id="previewGrid"></div>
+      <button class="upload-btn" id="uploadBtn" disabled>Upload Photos</button>
+    </div>
+
+    <div class="progress-section" id="progressSection">
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="progress-text" id="progressText">Uploading 0 of 0...</div>
+    </div>
+
+    <div class="completion-message" id="completionMessage">
+      <h3 id="completionTitle">Upload Complete!</h3>
+      <p id="completionText">All photos have been uploaded successfully.</p>
+      <button class="reset-btn" id="resetBtn">Upload More Photos</button>
+    </div>
+
+    <a href="the-cars.html" class="back-link">&larr; Back to The Cars</a>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // Cloudinary config
+    const CLOUDINARY_CLOUD_NAME = 'ds3b5nqnd';
+    const CLOUDINARY_UPLOAD_PRESET = 'cookersvdubs_upload';
+    const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
+
+    // Sanity config
+    const SANITY_PROJECT_ID = 'wa7rzamu';
+    const SANITY_DATASET = 'production';
+    const SANITY_API_VERSION = '2024-01-01';
+
+    // DOM elements
+    const carSelect = document.getElementById('carSelect');
+    const dropzone = document.getElementById('dropzone');
+    const fileInput = document.getElementById('fileInput');
+    const previewSection = document.getElementById('previewSection');
+    const previewCount = document.getElementById('previewCount');
+    const previewGrid = document.getElementById('previewGrid');
+    const clearBtn = document.getElementById('clearBtn');
+    const uploadBtn = document.getElementById('uploadBtn');
+    const progressSection = document.getElementById('progressSection');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const completionMessage = document.getElementById('completionMessage');
+    const completionTitle = document.getElementById('completionTitle');
+    const completionText = document.getElementById('completionText');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // State
+    let selectedFiles = [];
+    let carBuilds = [];
+
+    // Fetch car builds from Sanity
+    async function fetchCarBuilds() {
+      const query = encodeURIComponent('*[_type == "carBuild" && !(_id in path("drafts.**"))]{_id, title, slug} | order(title asc)');
+      const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${query}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+        carBuilds = data.result || [];
+
+        carSelect.innerHTML = '<option value="">-- Select a car build --</option>';
+        carBuilds.forEach(car => {
+          const option = document.createElement('option');
+          option.value = car.slug?.current || car._id;
+          option.textContent = car.title;
+          carSelect.appendChild(option);
+        });
+
+        carSelect.disabled = false;
+      } catch (error) {
+        console.error('Failed to fetch car builds:', error);
+        carSelect.innerHTML = '<option value="">Error loading cars - refresh page</option>';
+      }
+    }
+
+    // Enable/disable dropzone based on car selection
+    carSelect.addEventListener('change', () => {
+      const hasSelection = carSelect.value !== '';
+      dropzone.classList.toggle('disabled', !hasSelection);
+      updateUploadButton();
+    });
+
+    // Dropzone events
+    dropzone.addEventListener('click', () => {
+      if (!dropzone.classList.contains('disabled')) {
+        fileInput.click();
+      }
+    });
+
+    dropzone.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      if (!dropzone.classList.contains('disabled')) {
+        dropzone.classList.add('dragover');
+      }
+    });
+
+    dropzone.addEventListener('dragleave', () => {
+      dropzone.classList.remove('dragover');
+    });
+
+    dropzone.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropzone.classList.remove('dragover');
+      if (!dropzone.classList.contains('disabled')) {
+        handleFiles(e.dataTransfer.files);
+      }
+    });
+
+    fileInput.addEventListener('change', () => {
+      handleFiles(fileInput.files);
+      fileInput.value = ''; // Reset so same files can be selected again
+    });
+
+    // Handle file selection
+    function handleFiles(fileList) {
+      const validTypes = ['image/jpeg', 'image/png'];
+      const newFiles = Array.from(fileList).filter(f => validTypes.includes(f.type));
+
+      if (newFiles.length < fileList.length) {
+        alert('Some files were skipped. Only JPG and PNG images are allowed.');
+      }
+
+      selectedFiles = [...selectedFiles, ...newFiles];
+      renderPreviews();
+      updateUploadButton();
+    }
+
+    // Render preview thumbnails
+    function renderPreviews() {
+      previewGrid.innerHTML = '';
+
+      selectedFiles.forEach((file, index) => {
+        const item = document.createElement('div');
+        item.className = 'preview-item';
+        item.dataset.index = index;
+
+        const img = document.createElement('img');
+        img.src = URL.createObjectURL(file);
+
+        const filename = document.createElement('div');
+        filename.className = 'filename';
+        filename.textContent = file.name;
+
+        const statusOverlay = document.createElement('div');
+        statusOverlay.className = 'status-overlay';
+        statusOverlay.innerHTML = '<div class="spinner"></div>';
+
+        item.appendChild(img);
+        item.appendChild(filename);
+        item.appendChild(statusOverlay);
+        previewGrid.appendChild(item);
+      });
+
+      previewCount.textContent = `${selectedFiles.length} photo${selectedFiles.length !== 1 ? 's' : ''} selected`;
+      previewSection.classList.toggle('visible', selectedFiles.length > 0);
+    }
+
+    // Update upload button state
+    function updateUploadButton() {
+      uploadBtn.disabled = !carSelect.value || selectedFiles.length === 0;
+    }
+
+    // Clear all files
+    clearBtn.addEventListener('click', () => {
+      selectedFiles = [];
+      renderPreviews();
+      updateUploadButton();
+    });
+
+    // Upload files to Cloudinary
+    async function uploadFile(file, folder) {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+      formData.append('folder', folder);
+
+      const response = await fetch(CLOUDINARY_UPLOAD_URL, {
+        method: 'POST',
+        body: formData
+      });
+
+      if (!response.ok) {
+        throw new Error(`Upload failed: ${response.statusText}`);
+      }
+
+      return response.json();
+    }
+
+    // Handle upload button click
+    uploadBtn.addEventListener('click', async () => {
+      if (!carSelect.value || selectedFiles.length === 0) return;
+
+      const slug = carSelect.value;
+      const folder = `cookersvdubs/${slug}`;
+      const total = selectedFiles.length;
+      let completed = 0;
+      let failed = 0;
+
+      // Disable controls during upload
+      uploadBtn.disabled = true;
+      carSelect.disabled = true;
+      dropzone.classList.add('disabled');
+      clearBtn.style.display = 'none';
+
+      // Show progress
+      progressSection.classList.add('visible');
+      progressBar.style.width = '0%';
+      progressText.textContent = `Uploading 0 of ${total}...`;
+
+      // Upload each file
+      for (let i = 0; i < selectedFiles.length; i++) {
+        const file = selectedFiles[i];
+        const previewItem = previewGrid.querySelector(`[data-index="${i}"]`);
+
+        previewItem.classList.add('uploading');
+
+        try {
+          await uploadFile(file, folder);
+          previewItem.classList.remove('uploading');
+          previewItem.classList.add('success');
+          previewItem.querySelector('.status-overlay').innerHTML = '<span class="status-icon">&#10003;</span>';
+          completed++;
+        } catch (error) {
+          console.error(`Failed to upload ${file.name}:`, error);
+          previewItem.classList.remove('uploading');
+          previewItem.classList.add('error');
+          previewItem.querySelector('.status-overlay').innerHTML = '<span class="status-icon">&#10007;</span>';
+          failed++;
+        }
+
+        // Update progress
+        const progress = ((i + 1) / total) * 100;
+        progressBar.style.width = `${progress}%`;
+        progressText.textContent = `Uploading ${i + 1} of ${total}...`;
+      }
+
+      // Show completion message
+      progressSection.classList.remove('visible');
+      completionMessage.classList.add('visible');
+
+      if (failed === 0) {
+        completionMessage.className = 'completion-message visible success';
+        completionTitle.textContent = 'Upload Complete!';
+        completionText.textContent = `All ${completed} photo${completed !== 1 ? 's have' : ' has'} been uploaded successfully to ${slug}.`;
+      } else {
+        completionMessage.className = 'completion-message visible partial';
+        completionTitle.textContent = 'Upload Finished';
+        completionText.textContent = `${completed} of ${total} photos uploaded. ${failed} failed — try uploading those again.`;
+      }
+    });
+
+    // Reset for more uploads
+    resetBtn.addEventListener('click', () => {
+      selectedFiles = [];
+      renderPreviews();
+      updateUploadButton();
+      completionMessage.classList.remove('visible');
+      carSelect.disabled = false;
+      dropzone.classList.toggle('disabled', !carSelect.value);
+      clearBtn.style.display = '';
+    });
+
+    // Initialize
+    fetchCarBuilds();
+  })();
+  </script>
+</body>
+</html>
