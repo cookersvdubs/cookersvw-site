@@ -1,0 +1,128 @@
+---
+permalink: the-cars.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Cars — Cooker's Restoration &amp; Fabrication, LLC</title>
+  <meta name="description" content="Restorations in progress and our personal collection at Cooker's VW shop in Williamsport, MD."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+{% include "partials/header.njk" %}
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <img class="page-banner-img"
+    src="optimized_images/hero_images/toms-manx.jpg"
+    alt="Custom VW dune buggy - dramatic performance build"
+  />
+  <div class="page-banner-overlay"></div>
+  <div class="page-banner-content">
+    <div class="hero-eyebrow">In Progress &amp; Personal Rides</div>
+    <h1>The Cars</h1>
+  </div>
+</div>
+
+<!-- SECTION NAVIGATION -->
+<section class="section section-cream" style="padding:1.5rem 0 1rem; background:#f8f6f3;">
+  <div style="display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap;">
+    <a href="#in-progress" style="display:inline-block; padding:0.5rem 1.25rem; background:var(--vw-blue); color:white; text-decoration:none; border-radius:4px; font-size:0.8rem; font-weight:500; letter-spacing:0.5px; transition:background 0.2s;">In Progress</a>
+    <a href="#personal" style="display:inline-block; padding:0.5rem 1.25rem; background:var(--vw-blue); color:white; text-decoration:none; border-radius:4px; font-size:0.8rem; font-weight:500; letter-spacing:0.5px; transition:background 0.2s;">Personal Rides</a>
+  </div>
+</section>
+
+<!-- RESTORATIONS IN PROGRESS -->
+<section id="in-progress" class="latest">
+  <div class="section-header-split">
+    <div>
+      <div class="section-label">Currently in the Shop</div>
+      <h2>Restorations In Progress</h2>
+    </div>
+    <p>Click any build to follow the progress. These are the cars currently on the lift — every stage documented as the work unfolds.</p>
+  </div>
+
+  <div class="builds-grid">
+    {% for build in builds %}
+      {% if build.status == "in-progress" %}
+    <a href="cars/{{ build.slug }}.html" class="build-card">
+      <img class="card-img"
+        src="{{ build.hero_image | imageUrl }}"
+        alt="{{ build.title }}"
+        onerror="this.src='optimized_images/header_images/1425922475.jpg'"
+      />
+      <div class="card-body">
+        <span class="card-status status-progress">In Progress</span>
+        <div class="card-title">{{ build.title }}</div>
+        {% if build.description %}
+        <p class="card-desc">{{ build.description | truncate(120) }}</p>
+        {% endif %}
+      </div>
+    </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stat">
+    <span class="stat-num">20+</span>
+    <span class="stat-label">Years in Business</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">100s</span>
+    <span class="stat-label">Restorations Completed</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">All</span>
+    <span class="stat-label">Types of Air-Cooled VW</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">1</span>
+    <span class="stat-label">NPR Feature</span>
+  </div>
+</div>
+
+<!-- PERSONAL RIDES -->
+<section id="personal" class="section section-cream-dark">
+  <div class="section-header-split" style="margin-bottom:2.5rem;">
+    <div>
+      <div class="section-label">The Shop Family</div>
+      <h2>Our Personal Rides</h2>
+    </div>
+    <p>Some of our past and present rides — the cars that the folks here at Cooker's have owned, built, and loved over the years.</p>
+  </div>
+
+  <div class="builds-grid">
+    {% for build in builds %}
+      {% if build.status == "personal-ride" %}
+    <a href="cars/{{ build.slug }}.html" class="build-card">
+      <img class="card-img"
+        src="{{ build.hero_image | imageUrl }}"
+        alt="{{ build.title }}"
+        onerror="this.src='optimized_images/header_images/1425922475.jpg'"
+      />
+      <div class="card-body">
+        <span class="card-status status-personal">Personal Ride</span>
+        <div class="card-title">{{ build.title }}</div>
+        {% if build.description %}
+        <p class="card-desc">{{ build.description | truncate(120) }}</p>
+        {% endif %}
+      </div>
+    </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% include "partials/footer.njk" %}
+
+<script src="js/main.js"></script>
+</body>
+</html>

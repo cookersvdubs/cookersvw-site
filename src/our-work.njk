@@ -1,0 +1,318 @@
+---
+permalink: our-work.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Work — Cooker's Restoration &amp; Fabrication, LLC</title>
+  <meta name="description" content="Browse hundreds of completed VW restorations from Cooker's shop in Williamsport, MD. Bugs, Buses, Ghias, Things, Panels, Double Cabs, and more."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Filter bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.25rem;
+      align-items: center;
+    }
+    .filter-label {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      color: var(--mid-gray);
+      margin-right: 0.25rem;
+      white-space: nowrap;
+    }
+    .filter-btn {
+      background: white;
+      border: 1.5px solid var(--cream-dark);
+      border-radius: 3px;
+      padding: 0.4rem 0.85rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--dark);
+      cursor: pointer;
+      transition: background 0.18s, border-color 0.18s, color 0.18s;
+      white-space: nowrap;
+    }
+    .filter-btn:hover {
+      border-color: var(--vw-blue);
+      color: var(--vw-blue);
+    }
+    .filter-btn.active {
+      background: var(--vw-blue);
+      border-color: var(--vw-blue);
+      color: white;
+    }
+
+    /* Car card grid */
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .car-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .car-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .car-card-img-wrap {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+    .car-card-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+    .car-card:hover .car-card-img-wrap img { transform: scale(1.05); }
+    .car-card-body {
+      padding: 0.85rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .car-card-cat {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mid-gray);
+    }
+    .car-card-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+      color: var(--dark);
+      line-height: 1.2;
+    }
+    .car-card-count {
+      font-size: 0.72rem;
+      color: var(--mid-gray);
+      font-weight: 300;
+      margin-top: auto;
+      padding-top: 0.4rem;
+    }
+
+    /* No-results */
+    .no-results {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--mid-gray);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* Result count */
+    .result-count {
+      font-size: 0.78rem;
+      color: var(--mid-gray);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    @media (max-width: 600px) {
+      .car-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    }
+    @media (max-width: 380px) {
+      .car-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+{% include "partials/header.njk" %}
+
+<!-- PAGE BANNER -->
+<div class="page-banner">
+  <img class="page-banner-img"
+    src="optimized_images/hero_images/66-lotus-white-21-window.jpg"
+    alt="Stunning 21-window VW bus restoration"
+  />
+  <div class="page-banner-overlay"></div>
+  <div class="page-banner-content">
+    <div class="hero-eyebrow">Completed Restorations</div>
+    <h1>Our Work</h1>
+  </div>
+</div>
+
+<!-- FILTER BAR -->
+<section class="section section-cream" style="padding:1.5rem 0 1rem; background:#f8f6f3;">
+  <div class="filter-bar" id="filterBar" style="justify-content:center;">
+    <span class="filter-label">Filter by:</span>
+    <!-- buttons injected by JS -->
+  </div>
+  <div class="result-count" id="resultCount" style="text-align:center; margin-top:0.75rem;"></div>
+</section>
+
+<!-- FILTERABLE ARCHIVE -->
+<section id="gallery" class="section section-cream-dark">
+  <div class="section-label">The Full Archive</div>
+  <h2 style="margin-bottom:1.75rem;">All Completed Restorations</h2>
+
+  <div class="car-grid" id="carGrid">
+    <!-- cards injected by JS -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-strip">
+  <div class="about-img-wrap">
+    <div class="about-img-overlay"></div>
+  </div>
+  <div class="about-content">
+    <div class="section-label">Ready to Start?</div>
+    <h2>Your Car<br/>Could Be Next.</h2>
+    <p>Every car you see in this gallery started as a project — some rusty, some incomplete, some needing everything. Bring us yours and let's talk about what's possible.</p>
+    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+      <a href="the-cars.html" class="btn btn-outline">See In-Progress Builds</a>
+    </div>
+  </div>
+</section>
+
+{% include "partials/footer.njk" %}
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // Car data from Sanity CMS (filtered to completed builds only)
+  const CARS = [
+    {% for build in builds %}{% if build.status == "completed" %}{
+      "slug": "{{ build.slug }}",
+      "title": "{{ build.title | replace('"', '\\"') }}",
+      "category": "{{ build.model | modelDisplay | replace('"', '\\"') }}",
+      "imageCount": {{ build.gallery | length }},
+      "heroImage": "{{ build.hero_image | imageUrl }}"
+    }{% if not loop.last %},{% endif %}
+    {% endif %}{% endfor %}
+  ];
+
+  // Model-to-category mapping for filtering
+  const MODEL_TO_CATEGORY = {
+    "Beetle": "Beetle",
+    "Bus / Transporter": "Bus",
+    "Karmann Ghia": "Karmann Ghia",
+    "Type 3": "Type 3",
+    "Single Cab": "Single Cab",
+    "Double Cab": "Double Cab",
+    "Thing": "Thing",
+    "Custom / Hot Rod": "Custom / Hot Rod",
+    "Porsche 356": "Porsche 356",
+    "Panel Van": "Panel"
+  };
+
+  // Reverse mapping for filter buttons
+  const CATEGORY_DISPLAY = {
+    "Beetle": "Beetle",
+    "Bus": "Bus / Transporter",
+    "Karmann Ghia": "Karmann Ghia",
+    "Type 3": "Type 3",
+    "Single Cab": "Single Cab",
+    "Double Cab": "Double Cab",
+    "Thing": "Thing",
+    "Custom / Hot Rod": "Custom / Hot Rod",
+    "Porsche 356": "Porsche 356",
+    "Panel": "Panel Van"
+  };
+
+  const grid = document.getElementById('carGrid');
+  const filterBar = document.getElementById('filterBar');
+  const resultCount = document.getElementById('resultCount');
+
+  // Get unique categories from the data
+  const categories = [...new Set(CARS.map(c => c.category))].sort();
+
+  // Build filter buttons
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active';
+  allBtn.textContent = 'All';
+  allBtn.dataset.cat = '';
+  filterBar.appendChild(allBtn);
+
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.textContent = cat;
+    btn.dataset.cat = cat;
+    filterBar.appendChild(btn);
+  });
+
+  // Render function
+  function render(filterCat) {
+    const filtered = filterCat
+      ? CARS.filter(c => c.category === filterCat)
+      : CARS;
+
+    resultCount.textContent = filtered.length + ' restoration' + (filtered.length !== 1 ? 's' : '');
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="no-results">No restorations found in this category.</div>';
+      return;
+    }
+
+    grid.innerHTML = filtered.map(car => `
+      <a href="cars/${car.slug}.html" class="car-card">
+        <div class="car-card-img-wrap">
+          <img src="${car.heroImage}" alt="${car.title}" loading="lazy"
+            onerror="this.src='optimized_images/header_images/1425922475.jpg'"/>
+        </div>
+        <div class="car-card-body">
+          <div class="car-card-cat">${car.category}</div>
+          <div class="car-card-title">${car.title}</div>
+          <div class="car-card-count">${car.imageCount} photos</div>
+        </div>
+      </a>
+    `).join('');
+  }
+
+  // Filter click handler
+  filterBar.addEventListener('click', e => {
+    if (!e.target.classList.contains('filter-btn')) return;
+    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    render(e.target.dataset.cat);
+  });
+
+  // Check URL for initial filter
+  const params = new URLSearchParams(window.location.search);
+  const initialCat = params.get('cat');
+  if (initialCat) {
+    const btn = filterBar.querySelector(`[data-cat="${initialCat}"]`);
+    if (btn) {
+      filterBar.querySelector('.filter-btn.active').classList.remove('active');
+      btn.classList.add('active');
+      render(initialCat);
+    } else {
+      render('');
+    }
+  } else {
+    render('');
+  }
+})();
+</script>
+</body>
+</html>

@@ -13,12 +13,11 @@ module.exports = function(eleventyConfig) {
   // Note: cars/ pages are generated from Sanity CMS data
   // via src/cars.njk pagination template using src/_data/builds.json
 
-  // Preserve existing root HTML pages
+  // Preserve existing root HTML pages (static ones only)
+  // Note: our-work.html and the-cars.html are now generated from Nunjucks templates
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("about.html");
   eleventyConfig.addPassthroughCopy("contact.html");
-  eleventyConfig.addPassthroughCopy("our-work.html");
-  eleventyConfig.addPassthroughCopy("the-cars.html");
   eleventyConfig.addPassthroughCopy("videos.html");
   eleventyConfig.addPassthroughCopy("testimonials.html");
   eleventyConfig.addPassthroughCopy("open-houses.html");
