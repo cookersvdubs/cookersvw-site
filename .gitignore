@@ -16,3 +16,9 @@ _site/
 .cache/
 package-lock.json
 .env
+
+# Generated data - fetched fresh from Sanity on each build
+src/_data/builds.json
+
+# Legacy markdown builds - replaced by Sanity CMS
+src/builds/

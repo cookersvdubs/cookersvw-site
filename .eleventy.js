@@ -1,4 +1,8 @@
 module.exports = function(eleventyConfig) {
+  // Ignore legacy markdown builds - now using Sanity data via src/cars.njk
+  eleventyConfig.ignores.add("src/builds/**");
+  eleventyConfig.ignores.add("src/builds-legacy/**");
+
   // Passthrough copy - preserve existing static assets
   // These are copied from root to _site
   eleventyConfig.addPassthroughCopy("css");
@@ -6,7 +10,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("optimized_images");
   eleventyConfig.addPassthroughCopy("admin");
-  // Note: cars/ pages are now generated from src/builds/ markdown files
+  // Note: cars/ pages are generated from Sanity CMS data
+  // via src/cars.njk pagination template using src/_data/builds.json
 
   // Preserve existing root HTML pages
   eleventyConfig.addPassthroughCopy("index.html");
