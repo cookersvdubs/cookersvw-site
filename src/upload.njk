@@ -23,11 +23,7 @@ permalink: upload.html
       --error: #C0392B;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -37,11 +33,7 @@ permalink: upload.html
       line-height: 1.5;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
 
     h1 {
       font-family: 'Bebas Neue', sans-serif;
@@ -51,11 +43,44 @@ permalink: upload.html
       margin-bottom: 0.5rem;
     }
 
-    .subtitle {
-      color: var(--mid-gray);
-      font-size: 1rem;
-      margin-bottom: 2rem;
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: var(--dark);
+      margin-bottom: 1rem;
     }
+
+    .subtitle { color: var(--mid-gray); font-size: 1rem; margin-bottom: 2rem; }
+
+    /* Password gate */
+    .password-gate {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 400px;
+      margin: 3rem auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .password-gate input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      border: 2px solid var(--cream-dark);
+      border-radius: 6px;
+      margin: 1rem 0;
+    }
+
+    .password-gate input:focus { outline: none; border-color: var(--vw-blue); }
+
+    .password-error { color: var(--red); font-size: 0.85rem; margin-bottom: 1rem; display: none; }
+
+    /* Main upload UI */
+    .upload-ui { display: none; }
+    .upload-ui.visible { display: block; }
 
     .warning {
       background: #FDF2F2;
@@ -68,21 +93,10 @@ permalink: upload.html
       gap: 0.75rem;
     }
 
-    .warning-icon {
-      font-size: 1.5rem;
-      line-height: 1;
-      flex-shrink: 0;
-    }
+    .warning-icon { font-size: 1.5rem; line-height: 1; flex-shrink: 0; }
+    .warning-text { font-size: 0.9rem; color: var(--red); font-weight: 500; }
 
-    .warning-text {
-      font-size: 0.9rem;
-      color: var(--red);
-      font-weight: 500;
-    }
-
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
+    .form-group { margin-bottom: 1.5rem; }
 
     label {
       display: block;
@@ -101,23 +115,11 @@ permalink: upload.html
       border: 2px solid var(--cream-dark);
       border-radius: 6px;
       background: white;
-      color: var(--dark);
       cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236B6B6B' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
     }
 
-    select:focus {
-      outline: none;
-      border-color: var(--vw-blue);
-    }
-
-    select:disabled {
-      background-color: var(--cream-dark);
-      cursor: not-allowed;
-    }
+    select:focus { outline: none; border-color: var(--vw-blue); }
+    select:disabled { background-color: var(--cream-dark); cursor: not-allowed; }
 
     .dropzone {
       border: 3px dashed var(--cream-dark);
@@ -129,46 +131,39 @@ permalink: upload.html
       cursor: pointer;
     }
 
-    .dropzone:hover,
-    .dropzone.dragover {
-      border-color: var(--vw-blue);
-      background: #F8FBFD;
+    .dropzone:hover, .dropzone.dragover { border-color: var(--vw-blue); background: #F8FBFD; }
+    .dropzone.disabled { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+
+    .dropzone-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .dropzone-text { font-size: 1.1rem; color: var(--dark); margin-bottom: 0.5rem; }
+    .dropzone-hint { font-size: 0.85rem; color: var(--light-gray); }
+    .dropzone input[type="file"] { display: none; }
+
+    .btn {
+      padding: 1rem 2rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
     }
 
-    .dropzone.disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      pointer-events: none;
-    }
+    .btn-primary { background: var(--vw-blue); color: white; }
+    .btn-primary:hover:not(:disabled) { background: var(--vw-blue-dark); }
+    .btn-primary:disabled { background: var(--light-gray); cursor: not-allowed; }
 
-    .dropzone-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    .btn-secondary {
+      background: white;
+      color: var(--vw-blue);
+      border: 2px solid var(--vw-blue);
     }
+    .btn-secondary:hover { background: var(--vw-blue); color: white; }
 
-    .dropzone-text {
-      font-size: 1.1rem;
-      color: var(--dark);
-      margin-bottom: 0.5rem;
-    }
-
-    .dropzone-hint {
-      font-size: 0.85rem;
-      color: var(--light-gray);
-    }
-
-    .dropzone input[type="file"] {
-      display: none;
-    }
-
-    .preview-section {
-      margin-top: 2rem;
-      display: none;
-    }
-
-    .preview-section.visible {
-      display: block;
-    }
+    /* Preview section */
+    .section { margin-top: 2rem; display: none; }
+    .section.visible { display: block; }
 
     .preview-header {
       display: flex;
@@ -181,26 +176,20 @@ permalink: upload.html
       font-family: 'Bebas Neue', sans-serif;
       font-size: 1.1rem;
       letter-spacing: 1px;
-      color: var(--dark);
     }
 
     .clear-btn {
       background: none;
       border: none;
       color: var(--red);
-      font-family: 'DM Sans', sans-serif;
       font-size: 0.85rem;
       cursor: pointer;
       text-decoration: underline;
     }
 
-    .clear-btn:hover {
-      color: var(--vw-blue-dark);
-    }
-
     .preview-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: 1rem;
       margin-bottom: 1.5rem;
     }
@@ -211,13 +200,12 @@ permalink: upload.html
       border-radius: 8px;
       overflow: hidden;
       background: var(--cream-dark);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .preview-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .preview-item:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    .preview-item img { width: 100%; height: 100%; object-fit: cover; }
 
     .preview-item .filename {
       position: absolute;
@@ -226,8 +214,8 @@ permalink: upload.html
       right: 0;
       background: rgba(0,0,0,0.7);
       color: white;
-      font-size: 0.65rem;
-      padding: 0.3rem 0.4rem;
+      font-size: 0.6rem;
+      padding: 0.25rem 0.4rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -246,22 +234,12 @@ permalink: upload.html
 
     .preview-item.uploading .status-overlay,
     .preview-item.success .status-overlay,
-    .preview-item.error .status-overlay {
-      opacity: 1;
-    }
+    .preview-item.error .status-overlay { opacity: 1; }
 
-    .preview-item.success .status-overlay {
-      background: rgba(39, 174, 96, 0.9);
-    }
+    .preview-item.success .status-overlay { background: rgba(39, 174, 96, 0.9); }
+    .preview-item.error .status-overlay { background: rgba(192, 57, 43, 0.9); }
 
-    .preview-item.error .status-overlay {
-      background: rgba(192, 57, 43, 0.9);
-    }
-
-    .status-icon {
-      font-size: 2rem;
-      color: white;
-    }
+    .status-icon { font-size: 2rem; color: white; }
 
     .spinner {
       width: 32px;
@@ -272,42 +250,43 @@ permalink: upload.html
       animation: spin 0.8s linear infinite;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Hero selection */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
     }
 
-    .upload-btn {
-      width: 100%;
-      padding: 1rem 2rem;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.3rem;
-      letter-spacing: 2px;
-      background: var(--vw-blue);
-      color: white;
-      border: none;
+    .hero-item {
+      position: relative;
+      aspect-ratio: 4/3;
       border-radius: 8px;
+      overflow: hidden;
       cursor: pointer;
-      transition: background 0.2s;
+      border: 3px solid transparent;
+      transition: all 0.2s;
     }
 
-    .upload-btn:hover:not(:disabled) {
-      background: var(--vw-blue-dark);
+    .hero-item:hover { border-color: var(--vw-blue); }
+    .hero-item.selected { border-color: var(--success); }
+    .hero-item.selected::after {
+      content: '✓ HERO';
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: var(--success);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
     }
 
-    .upload-btn:disabled {
-      background: var(--light-gray);
-      cursor: not-allowed;
-    }
+    .hero-item img { width: 100%; height: 100%; object-fit: cover; }
 
-    .progress-section {
-      margin-top: 1.5rem;
-      display: none;
-    }
-
-    .progress-section.visible {
-      display: block;
-    }
-
+    /* Progress */
     .progress-bar-container {
       background: var(--cream-dark);
       border-radius: 8px;
@@ -323,71 +302,19 @@ permalink: upload.html
       width: 0%;
     }
 
-    .progress-text {
-      font-size: 0.9rem;
-      color: var(--mid-gray);
-      text-align: center;
-    }
+    .progress-text { font-size: 0.9rem; color: var(--mid-gray); text-align: center; }
 
+    /* Completion */
     .completion-message {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      border-radius: 8px;
-      text-align: center;
-      display: none;
-    }
-
-    .completion-message.visible {
-      display: block;
-    }
-
-    .completion-message.success {
       background: #E8F8EF;
       border: 2px solid var(--success);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
     }
 
-    .completion-message.partial {
-      background: #FEF9E7;
-      border: 2px solid #F39C12;
-    }
-
-    .completion-message h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-    }
-
-    .completion-message.success h3 {
-      color: var(--success);
-    }
-
-    .completion-message.partial h3 {
-      color: #F39C12;
-    }
-
-    .completion-message p {
-      font-size: 0.95rem;
-      color: var(--mid-gray);
-    }
-
-    .reset-btn {
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      background: white;
-      color: var(--vw-blue);
-      border: 2px solid var(--vw-blue);
-      border-radius: 6px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .reset-btn:hover {
-      background: var(--vw-blue);
-      color: white;
-    }
+    .completion-message h2 { color: var(--success); margin-bottom: 0.5rem; }
+    .completion-message p { color: var(--mid-gray); margin-bottom: 1.5rem; }
 
     .back-link {
       display: inline-block;
@@ -397,97 +324,127 @@ permalink: upload.html
       font-size: 0.9rem;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
-    }
+    .back-link:hover { text-decoration: underline; }
 
     @media (max-width: 600px) {
-      .container {
-        padding: 1.5rem 1rem;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      .dropzone {
-        padding: 2rem 1rem;
-      }
-
-      .preview-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
-      }
+      .container { padding: 1.5rem 1rem; }
+      h1 { font-size: 2rem; }
+      .dropzone { padding: 2rem 1rem; }
+      .preview-grid, .hero-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Upload Photos</h1>
-    <p class="subtitle">Bulk upload photos for car build galleries</p>
+    <p class="subtitle">Upload photos to Cloudinary and save to Sanity</p>
 
-    <div class="warning">
-      <span class="warning-icon">&#9888;</span>
-      <span class="warning-text">Select the correct car before uploading — images cannot be easily moved after upload.</span>
+    <!-- Password Gate -->
+    <div class="password-gate" id="passwordGate">
+      <h2>Enter Password</h2>
+      <p style="color: var(--mid-gray); font-size: 0.9rem;">This tool requires authorization</p>
+      <input type="password" id="passwordInput" placeholder="Enter password..." autocomplete="off"/>
+      <div class="password-error" id="passwordError">Incorrect password</div>
+      <button class="btn btn-primary" style="width: 100%;" id="unlockBtn">Unlock</button>
     </div>
 
-    <div class="form-group">
-      <label for="carSelect">Select Car Build</label>
-      <select id="carSelect" disabled>
-        <option value="">Loading car builds...</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label>Photos to Upload</label>
-      <div class="dropzone disabled" id="dropzone">
-        <div class="dropzone-icon">&#128247;</div>
-        <div class="dropzone-text">Drag &amp; drop photos here</div>
-        <div class="dropzone-hint">or click to browse (JPG, PNG only)</div>
-        <input type="file" id="fileInput" multiple accept="image/jpeg,image/png,.jpg,.jpeg,.png"/>
+    <!-- Main Upload UI (hidden until unlocked) -->
+    <div class="upload-ui" id="uploadUI">
+      <div class="warning">
+        <span class="warning-icon">&#9888;</span>
+        <span class="warning-text">Select the correct car before uploading — images will be saved directly to that car's gallery in Sanity.</span>
       </div>
-    </div>
 
-    <div class="preview-section" id="previewSection">
-      <div class="preview-header">
-        <span class="preview-count" id="previewCount">0 photos selected</span>
-        <button class="clear-btn" id="clearBtn">Clear all</button>
+      <div class="form-group">
+        <label for="carSelect">Select Car Build</label>
+        <select id="carSelect" disabled>
+          <option value="">Loading car builds...</option>
+        </select>
       </div>
-      <div class="preview-grid" id="previewGrid"></div>
-      <button class="upload-btn" id="uploadBtn" disabled>Upload Photos</button>
-    </div>
 
-    <div class="progress-section" id="progressSection">
-      <div class="progress-bar-container">
-        <div class="progress-bar" id="progressBar"></div>
+      <div class="form-group">
+        <label>Photos to Upload</label>
+        <div class="dropzone disabled" id="dropzone">
+          <div class="dropzone-icon">&#128247;</div>
+          <div class="dropzone-text">Drag &amp; drop photos here</div>
+          <div class="dropzone-hint">or click to browse (JPG, PNG only)</div>
+          <input type="file" id="fileInput" multiple accept="image/jpeg,image/png,.jpg,.jpeg,.png"/>
+        </div>
       </div>
-      <div class="progress-text" id="progressText">Uploading 0 of 0...</div>
-    </div>
 
-    <div class="completion-message" id="completionMessage">
-      <h3 id="completionTitle">Upload Complete!</h3>
-      <p id="completionText">All photos have been uploaded successfully.</p>
-      <button class="reset-btn" id="resetBtn">Upload More Photos</button>
-    </div>
+      <!-- Preview Section -->
+      <div class="section" id="previewSection">
+        <div class="preview-header">
+          <span class="preview-count" id="previewCount">0 photos selected</span>
+          <button class="clear-btn" id="clearBtn">Clear all</button>
+        </div>
+        <div class="preview-grid" id="previewGrid"></div>
+        <button class="btn btn-primary" style="width: 100%;" id="uploadBtn" disabled>Upload to Cloudinary</button>
+      </div>
 
-    <a href="the-cars.html" class="back-link">&larr; Back to The Cars</a>
+      <!-- Progress Section -->
+      <div class="section" id="progressSection">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="progress-text" id="progressText">Uploading...</div>
+      </div>
+
+      <!-- Hero Selection Section -->
+      <div class="section" id="heroSection">
+        <h2>Select Hero Image</h2>
+        <p style="color: var(--mid-gray); margin-bottom: 1rem;">Click an image to set it as the main hero image for this car.</p>
+        <div class="hero-grid" id="heroGrid"></div>
+        <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" id="saveToSanityBtn">Save to Sanity</button>
+      </div>
+
+      <!-- Saving Progress -->
+      <div class="section" id="savingSection">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="savingBar" style="width: 50%;"></div>
+        </div>
+        <div class="progress-text">Saving to Sanity...</div>
+      </div>
+
+      <!-- Completion Section -->
+      <div class="section" id="completionSection">
+        <div class="completion-message">
+          <h2>Upload Complete!</h2>
+          <p id="completionText">Images saved to Sanity successfully.</p>
+          <a href="https://cookersvdubs.sanity.studio" target="_blank" class="btn btn-primary" style="display: inline-block; text-decoration: none;">Open Sanity Studio</a>
+          <button class="btn btn-secondary" style="margin-left: 1rem;" id="resetBtn">Upload More</button>
+        </div>
+      </div>
+
+      <a href="the-cars.html" class="back-link">&larr; Back to The Cars</a>
+    </div>
   </div>
 
   <script>
   (function() {
     'use strict';
 
-    // Cloudinary config
+    // Config
     const CLOUDINARY_CLOUD_NAME = 'ds3b5nqnd';
     const CLOUDINARY_UPLOAD_PRESET = 'cookersvdubs_upload';
     const CLOUDINARY_UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
 
-    // Sanity config
     const SANITY_PROJECT_ID = 'wa7rzamu';
     const SANITY_DATASET = 'production';
     const SANITY_API_VERSION = '2021-10-21';
 
+    // The password unlocks access (simple protection for Gene)
+    const ACCESS_PASSWORD = 'cookers2024';
+
+    // Sanity write token (revealed after password)
+    const SANITY_TOKEN = 'skEIXihMbl2K8XSRDHntkMhqhVig4mHZzFgiPHKVcsuuZ7WsNUa51RMSTVwhWLyfDHv93itIhq7Cm2vMyQzpOZkQFj8ixkon24NOYGSecQKRKY5Nzf8CimlJOvsIKbnluBlSGE9bjoRXsjnD4Y7OkZXu4P37SjjRShXNlQdyzIxIDKPPiDa9';
+
     // DOM elements
+    const passwordGate = document.getElementById('passwordGate');
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordError = document.getElementById('passwordError');
+    const unlockBtn = document.getElementById('unlockBtn');
+    const uploadUI = document.getElementById('uploadUI');
     const carSelect = document.getElementById('carSelect');
     const dropzone = document.getElementById('dropzone');
     const fileInput = document.getElementById('fileInput');
@@ -499,29 +456,55 @@ permalink: upload.html
     const progressSection = document.getElementById('progressSection');
     const progressBar = document.getElementById('progressBar');
     const progressText = document.getElementById('progressText');
-    const completionMessage = document.getElementById('completionMessage');
-    const completionTitle = document.getElementById('completionTitle');
+    const heroSection = document.getElementById('heroSection');
+    const heroGrid = document.getElementById('heroGrid');
+    const saveToSanityBtn = document.getElementById('saveToSanityBtn');
+    const savingSection = document.getElementById('savingSection');
+    const savingBar = document.getElementById('savingBar');
+    const completionSection = document.getElementById('completionSection');
     const completionText = document.getElementById('completionText');
     const resetBtn = document.getElementById('resetBtn');
 
     // State
     let selectedFiles = [];
-    let carBuilds = [];
+    let uploadedUrls = [];
+    let selectedHeroUrl = null;
+    let selectedCarId = null;
+    let selectedCarSlug = null;
+
+    // Password unlock
+    unlockBtn.addEventListener('click', checkPassword);
+    passwordInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') checkPassword();
+    });
+
+    function checkPassword() {
+      if (passwordInput.value === ACCESS_PASSWORD) {
+        passwordGate.style.display = 'none';
+        uploadUI.classList.add('visible');
+        fetchCarBuilds();
+      } else {
+        passwordError.style.display = 'block';
+        passwordInput.value = '';
+        passwordInput.focus();
+      }
+    }
 
     // Fetch car builds from Sanity
     async function fetchCarBuilds() {
-      const query = '*[_type=="carBuild"&&!(_id in path("drafts.**"))]{title,slug}|order(title asc)';
+      const query = '*[_type=="carBuild"&&!(_id in path("drafts.**"))]{_id,title,slug}|order(title asc)';
       const url = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(query)}`;
 
       try {
         const response = await fetch(url);
         const data = await response.json();
-        carBuilds = data.result || [];
+        const cars = data.result || [];
 
         carSelect.innerHTML = '<option value="">-- Select a car build --</option>';
-        carBuilds.forEach(car => {
+        cars.forEach(car => {
           const option = document.createElement('option');
-          option.value = car.slug?.current || car._id;
+          option.value = car._id;
+          option.dataset.slug = car.slug?.current || car._id;
           option.textContent = car.title;
           carSelect.appendChild(option);
         });
@@ -533,45 +516,38 @@ permalink: upload.html
       }
     }
 
-    // Enable/disable dropzone based on car selection
+    // Car selection
     carSelect.addEventListener('change', () => {
-      const hasSelection = carSelect.value !== '';
-      dropzone.classList.toggle('disabled', !hasSelection);
+      const option = carSelect.options[carSelect.selectedIndex];
+      selectedCarId = carSelect.value;
+      selectedCarSlug = option?.dataset?.slug || '';
+      dropzone.classList.toggle('disabled', !selectedCarId);
       updateUploadButton();
     });
 
     // Dropzone events
     dropzone.addEventListener('click', () => {
-      if (!dropzone.classList.contains('disabled')) {
-        fileInput.click();
-      }
+      if (!dropzone.classList.contains('disabled')) fileInput.click();
     });
 
     dropzone.addEventListener('dragover', (e) => {
       e.preventDefault();
-      if (!dropzone.classList.contains('disabled')) {
-        dropzone.classList.add('dragover');
-      }
+      if (!dropzone.classList.contains('disabled')) dropzone.classList.add('dragover');
     });
 
-    dropzone.addEventListener('dragleave', () => {
-      dropzone.classList.remove('dragover');
-    });
+    dropzone.addEventListener('dragleave', () => dropzone.classList.remove('dragover'));
 
     dropzone.addEventListener('drop', (e) => {
       e.preventDefault();
       dropzone.classList.remove('dragover');
-      if (!dropzone.classList.contains('disabled')) {
-        handleFiles(e.dataTransfer.files);
-      }
+      if (!dropzone.classList.contains('disabled')) handleFiles(e.dataTransfer.files);
     });
 
     fileInput.addEventListener('change', () => {
       handleFiles(fileInput.files);
-      fileInput.value = ''; // Reset so same files can be selected again
+      fileInput.value = '';
     });
 
-    // Handle file selection
     function handleFiles(fileList) {
       const validTypes = ['image/jpeg', 'image/png'];
       const newFiles = Array.from(fileList).filter(f => validTypes.includes(f.type));
@@ -585,7 +561,6 @@ permalink: upload.html
       updateUploadButton();
     }
 
-    // Render preview thumbnails
     function renderPreviews() {
       previewGrid.innerHTML = '';
 
@@ -615,19 +590,17 @@ permalink: upload.html
       previewSection.classList.toggle('visible', selectedFiles.length > 0);
     }
 
-    // Update upload button state
     function updateUploadButton() {
-      uploadBtn.disabled = !carSelect.value || selectedFiles.length === 0;
+      uploadBtn.disabled = !selectedCarId || selectedFiles.length === 0;
     }
 
-    // Clear all files
     clearBtn.addEventListener('click', () => {
       selectedFiles = [];
       renderPreviews();
       updateUploadButton();
     });
 
-    // Upload files to Cloudinary
+    // Upload to Cloudinary
     async function uploadFile(file, folder) {
       const formData = new FormData();
       formData.append('file', file);
@@ -639,24 +612,18 @@ permalink: upload.html
         body: formData
       });
 
-      if (!response.ok) {
-        throw new Error(`Upload failed: ${response.statusText}`);
-      }
-
+      if (!response.ok) throw new Error(`Upload failed: ${response.statusText}`);
       return response.json();
     }
 
-    // Handle upload button click
     uploadBtn.addEventListener('click', async () => {
-      if (!carSelect.value || selectedFiles.length === 0) return;
+      if (!selectedCarId || selectedFiles.length === 0) return;
 
-      const slug = carSelect.value;
-      const folder = `cookersvdubs/${slug}`;
+      const folder = `cookersvdubs/${selectedCarSlug}`;
       const total = selectedFiles.length;
-      let completed = 0;
-      let failed = 0;
+      uploadedUrls = [];
 
-      // Disable controls during upload
+      // Disable controls
       uploadBtn.disabled = true;
       carSelect.disabled = true;
       dropzone.classList.add('disabled');
@@ -665,63 +632,152 @@ permalink: upload.html
       // Show progress
       progressSection.classList.add('visible');
       progressBar.style.width = '0%';
-      progressText.textContent = `Uploading 0 of ${total}...`;
 
       // Upload each file
       for (let i = 0; i < selectedFiles.length; i++) {
         const file = selectedFiles[i];
         const previewItem = previewGrid.querySelector(`[data-index="${i}"]`);
-
         previewItem.classList.add('uploading');
 
         try {
-          await uploadFile(file, folder);
+          const result = await uploadFile(file, folder);
+          uploadedUrls.push(result.secure_url);
           previewItem.classList.remove('uploading');
           previewItem.classList.add('success');
           previewItem.querySelector('.status-overlay').innerHTML = '<span class="status-icon">&#10003;</span>';
-          completed++;
         } catch (error) {
           console.error(`Failed to upload ${file.name}:`, error);
           previewItem.classList.remove('uploading');
           previewItem.classList.add('error');
           previewItem.querySelector('.status-overlay').innerHTML = '<span class="status-icon">&#10007;</span>';
-          failed++;
         }
 
-        // Update progress
         const progress = ((i + 1) / total) * 100;
         progressBar.style.width = `${progress}%`;
         progressText.textContent = `Uploading ${i + 1} of ${total}...`;
       }
 
-      // Show completion message
+      // Hide progress, show hero selection
       progressSection.classList.remove('visible');
-      completionMessage.classList.add('visible');
+      previewSection.classList.remove('visible');
 
-      if (failed === 0) {
-        completionMessage.className = 'completion-message visible success';
-        completionTitle.textContent = 'Upload Complete!';
-        completionText.textContent = `All ${completed} photo${completed !== 1 ? 's have' : ' has'} been uploaded successfully to ${slug}.`;
+      if (uploadedUrls.length > 0) {
+        renderHeroSelection();
+        heroSection.classList.add('visible');
       } else {
-        completionMessage.className = 'completion-message visible partial';
-        completionTitle.textContent = 'Upload Finished';
-        completionText.textContent = `${completed} of ${total} photos uploaded. ${failed} failed — try uploading those again.`;
+        alert('All uploads failed. Please try again.');
+        resetUploader();
       }
     });
 
-    // Reset for more uploads
-    resetBtn.addEventListener('click', () => {
+    // Hero selection
+    function renderHeroSelection() {
+      heroGrid.innerHTML = '';
+      selectedHeroUrl = uploadedUrls[0]; // Default to first
+
+      uploadedUrls.forEach((url, index) => {
+        const item = document.createElement('div');
+        item.className = 'hero-item' + (index === 0 ? ' selected' : '');
+        item.dataset.url = url;
+
+        const img = document.createElement('img');
+        img.src = url;
+        item.appendChild(img);
+
+        item.addEventListener('click', () => {
+          heroGrid.querySelectorAll('.hero-item').forEach(el => el.classList.remove('selected'));
+          item.classList.add('selected');
+          selectedHeroUrl = url;
+        });
+
+        heroGrid.appendChild(item);
+      });
+    }
+
+    // Save to Sanity
+    saveToSanityBtn.addEventListener('click', saveToSanity);
+
+    async function saveToSanity() {
+      heroSection.classList.remove('visible');
+      savingSection.classList.add('visible');
+
+      try {
+        // Build gallery items
+        const galleryItems = uploadedUrls.map((url, index) => ({
+          _key: `img-${Date.now()}-${index}`,
+          _type: 'galleryImage',
+          image: url,
+          caption: ''
+        }));
+
+        // Fetch current document to get existing gallery
+        const docUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/query/${SANITY_DATASET}?query=${encodeURIComponent(`*[_id=="${selectedCarId}"][0]{gallery}`)}`;
+        const docResponse = await fetch(docUrl);
+        const docData = await docResponse.json();
+        const existingGallery = docData.result?.gallery || [];
+
+        // Combine existing + new
+        const newGallery = [...existingGallery, ...galleryItems];
+
+        // Patch document
+        const mutations = [{
+          patch: {
+            id: selectedCarId,
+            set: {
+              heroImage: selectedHeroUrl,
+              gallery: newGallery
+            }
+          }
+        }];
+
+        const patchUrl = `https://${SANITY_PROJECT_ID}.api.sanity.io/v${SANITY_API_VERSION}/data/mutate/${SANITY_DATASET}`;
+        const patchResponse = await fetch(patchUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${SANITY_TOKEN}`
+          },
+          body: JSON.stringify({ mutations })
+        });
+
+        if (!patchResponse.ok) {
+          const errorData = await patchResponse.json();
+          throw new Error(errorData.error?.description || 'Failed to save to Sanity');
+        }
+
+        savingSection.classList.remove('visible');
+        completionText.textContent = `${uploadedUrls.length} images saved to gallery. Hero image set. Go to Sanity Studio to reorder and publish.`;
+        completionSection.classList.add('visible');
+
+      } catch (error) {
+        console.error('Failed to save to Sanity:', error);
+        savingSection.classList.remove('visible');
+        alert('Failed to save to Sanity: ' + error.message);
+        heroSection.classList.add('visible');
+      }
+    }
+
+    // Reset
+    resetBtn.addEventListener('click', resetUploader);
+
+    function resetUploader() {
       selectedFiles = [];
-      renderPreviews();
-      updateUploadButton();
-      completionMessage.classList.remove('visible');
+      uploadedUrls = [];
+      selectedHeroUrl = null;
+
+      previewGrid.innerHTML = '';
+      heroGrid.innerHTML = '';
+      previewSection.classList.remove('visible');
+      progressSection.classList.remove('visible');
+      heroSection.classList.remove('visible');
+      savingSection.classList.remove('visible');
+      completionSection.classList.remove('visible');
+
       carSelect.disabled = false;
       dropzone.classList.toggle('disabled', !carSelect.value);
       clearBtn.style.display = '';
-    });
-
-    // Initialize
-    fetchCarBuilds();
+      uploadBtn.disabled = true;
+    }
   })();
   </script>
 </body>

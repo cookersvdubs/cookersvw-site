@@ -1,6 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "node src/scripts/fetch-sanity-data.js && npx eleventy"
   publish = "_site"
+
+[build.environment]
+  SANITY_PROJECT_ID = "wa7rzamu"
+  SANITY_DATASET = "production"
 
 [[headers]]
   for = "/admin/*"
