@@ -8,8 +8,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("images");
-  eleventyConfig.addPassthroughCopy("optimized_images");
-  eleventyConfig.addPassthroughCopy("admin");
+  // optimized_images removed - hero images now served from Cloudinary
+  // admin removed - Netlify CMS replaced by Sanity
   // Note: cars/ pages are generated from Sanity CMS data
   // via src/cars.njk pagination template using src/_data/builds.json
 
@@ -39,8 +39,9 @@ module.exports = function(eleventyConfig) {
     if (image.startsWith('cookersvdubs/')) {
       return `https://res.cloudinary.com/ds3b5nqnd/image/upload/${image}.jpg`;
     }
-    // Otherwise, prepend local path
-    return `../optimized_images/${image}`;
+    // Legacy local filename - return fallback (all images should now be Cloudinary URLs)
+    console.warn(`Warning: Local image reference found: ${image}`);
+    return `https://res.cloudinary.com/ds3b5nqnd/image/upload/v1773886760/cookersvdubs/site-assets/fallback-header.jpg`;
   });
 
   // Filter to get status CSS class

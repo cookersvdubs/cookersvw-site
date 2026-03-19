@@ -41,7 +41,7 @@ permalink: "cars/{{ build.slug }}.html"
 <!-- CAR HERO -->
 <div class="car-hero">
   <img src="{{ (build.hero_image | default(build.gallery[0].image if build.gallery and build.gallery[0] else 'header_images/1425922475.jpg')) | imageUrl }}" alt="{{ build.title }}"
-    onerror="this.src='../optimized_images/header_images/1425922475.jpg'"/>
+    onerror="this.src='https://res.cloudinary.com/ds3b5nqnd/image/upload/v1773886760/cookersvdubs/site-assets/fallback-header.jpg'"/>
   <div class="car-hero-overlay"></div>
   <div class="car-hero-content">
     <div class="car-breadcrumb">
