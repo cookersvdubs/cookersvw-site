@@ -23,6 +23,12 @@
     .car-count { font-size:.65rem;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--light-gray); }
     @media(max-width:720px){.car-hero{height:260px;}.car-hero-content{padding:1.5rem 1.25rem;}}
 
+    /* Featured gallery image */
+    .featured-photo { margin-bottom:1.5rem; }
+    .featured-photo .thumb-item { aspect-ratio:auto; height:450px; border-radius:4px; }
+    .featured-photo .thumb-item img { object-position:center 40%; }
+    @media(max-width:720px){ .featured-photo .thumb-item { height:280px; } }
+
     /* CMS preview pane — constrain images to viewport width */
     img { max-width:100%; height:auto; }
     .thumb-grid img { width:100%; height:100%; object-fit:cover; }
@@ -65,8 +71,42 @@
   <p class="car-desc">{{ description }}</p>
   {% endif %}
 
+  {# Featured image logic: hero_image → first gallery image #}
+  {# If hero_image set: featured = hero_image, thumbnails = all gallery #}
+  {# If no hero_image: featured = gallery[0], thumbnails = gallery[1:] #}
+  {% if hero_image %}
+    {% set featuredImageSrc = hero_image | imageUrl %}
+    {% set thumbnailPhotos = gallery %}
+  {% elif gallery and gallery.length > 0 %}
+    {% set featuredImageSrc = gallery[0].image | imageUrl %}
+    {% set thumbnailPhotos = gallery | slice(1) %}
+  {% else %}
+    {% set featuredImageSrc = null %}
+    {% set thumbnailPhotos = [] %}
+  {% endif %}
+
+  {# Featured photo - large display #}
+  {% if featuredImageSrc %}
+  <div class="featured-photo">
+    <div class="thumb-item"
+         data-src="{{ featuredImageSrc }}"
+         data-full-src="{{ featuredImageSrc }}"
+         data-alt="{{ title }} - Featured">
+      <img src="{{ featuredImageSrc }}" alt="{{ title }}"/>
+      <div class="thumb-overlay">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {# Thumbnail grid #}
+  {% if thumbnailPhotos.length > 0 %}
   <div class="thumb-grid">
-    {% for photo in gallery %}
+    {% for photo in thumbnailPhotos %}
     <div class="thumb-item"
          data-src="{{ photo.image | imageUrl }}"
          data-full-src="{{ photo.image | imageUrl }}"
@@ -81,6 +121,7 @@
     </div>
     {% endfor %}
   </div>
+  {% endif %}
 </section>
 
 <!-- RELATED CTA -->
