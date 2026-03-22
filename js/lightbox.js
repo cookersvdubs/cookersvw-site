@@ -29,8 +29,8 @@
   let images  = [];   // [{src, fullSrc, alt}]
   let current = 0;
 
-  // ── Collect all .thumb-item elements ──────────────
-  function initGallery() {
+  // ── Collect .thumb-item elements (car pages) ──────────────
+  function initThumbGallery() {
     const thumbs = document.querySelectorAll('.thumb-item');
     if (!thumbs.length) return;
 
@@ -44,6 +44,58 @@
     });
 
     // Build film strip
+    buildStrip();
+
+    // Click on any thumb → open lightbox
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => open(parseInt(t.dataset.lbIndex, 10)));
+    });
+  }
+
+  // ── Collect [data-lightbox] elements (grouped galleries) ──────────────
+  function initDataLightboxGallery() {
+    const lightboxItems = document.querySelectorAll('[data-lightbox]');
+    if (!lightboxItems.length) return;
+
+    // Group by data-lightbox value
+    const groups = {};
+    lightboxItems.forEach(item => {
+      const group = item.dataset.lightbox;
+      if (!groups[group]) groups[group] = [];
+      groups[group].push(item);
+    });
+
+    // Set up click handlers for each group
+    Object.keys(groups).forEach(groupName => {
+      const items = groups[groupName];
+      items.forEach((item, i) => {
+        item.dataset.lbGroup = groupName;
+        item.dataset.lbIndex = i;
+
+        item.addEventListener('click', (e) => {
+          e.preventDefault();
+          openGroup(groupName, i);
+        });
+      });
+    });
+  }
+
+  // ── Open lightbox for a specific group ───────────────────────────────
+  function openGroup(groupName, index) {
+    const items = document.querySelectorAll(`[data-lightbox="${groupName}"]`);
+
+    images = Array.from(items).map(item => ({
+      src:     item.dataset.src || item.querySelector('img')?.src || '',
+      fullSrc: item.dataset.fullSrc || item.dataset.src || item.querySelector('img')?.src || '',
+      alt:     item.querySelector('img')?.alt || '',
+    }));
+
+    buildStrip();
+    open(index);
+  }
+
+  // ── Build film strip ─────────────────────────────────────
+  function buildStrip() {
     strip.innerHTML = '';
     images.forEach((img, i) => {
       const el = document.createElement('img');
@@ -52,11 +104,6 @@
       el.className      = 'lb-strip-item';
       el.dataset.index  = i;
       strip.appendChild(el);
-    });
-
-    // Click on any thumb → open lightbox
-    thumbs.forEach(t => {
-      t.addEventListener('click', () => open(parseInt(t.dataset.lbIndex, 10)));
     });
   }
 
@@ -146,9 +193,17 @@
   }, { passive: true });
 
   // ── Init ───────────────────────────────────────────
+  function init() {
+    // Support both patterns:
+    // 1. .thumb-item (car build pages)
+    // 2. [data-lightbox] (open-houses, grouped galleries)
+    initThumbGallery();
+    initDataLightboxGallery();
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initGallery);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initGallery();
+    init();
   }
 })();
