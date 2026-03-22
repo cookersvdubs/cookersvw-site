@@ -23,6 +23,5 @@ src/_data/builds.json
 # Legacy markdown builds - replaced by Sanity CMS
 src/builds/
 
-# Local images - hero images now served from Cloudinary
-# open-houses.html still references these locally but page is excluded from deploy
+# Local images - all images now served from Cloudinary
 optimized_images/
