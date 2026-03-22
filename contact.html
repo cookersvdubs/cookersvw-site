@@ -110,8 +110,12 @@
       <h2 style="margin-bottom:1.75rem;">Start the Conversation</h2>
 
       <div class="contact-form">
+        <div id="form-success" style="display:none; background:#2e7d32; color:white; padding:1rem 1.25rem; border-radius:4px; margin-bottom:1.5rem; font-weight:500;">
+          Thanks! We'll be in touch soon.
+        </div>
         <form action="https://formspree.io/f/mreywzvy" method="POST">
           <input type="hidden" name="_subject" value="New message from Cooker's website">
+          <input type="hidden" name="_next" value="https://cookersvdubs.pages.dev/contact?submission=success">
           <div class="form-row">
             <div class="form-group">
               <label for="fname">First Name</label>
@@ -288,5 +292,10 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+if (new URLSearchParams(window.location.search).get('submission') === 'success') {
+  document.getElementById('form-success').style.display = 'block';
+}
+</script>
 </body>
 </html>
