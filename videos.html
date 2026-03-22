@@ -8,6 +8,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .video-title {
+      padding: 0.75rem 1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      line-height: 1.4;
+      min-height: 2.8em;
+    }
+    .video-title.loading {
+      color: var(--mid-gray);
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
@@ -118,420 +133,342 @@
 <section class="section section-cream" style="padding-top:0;">
   <div class="video-grid">
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=ESXDy0AD2gs" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/ESXDy0AD2gs/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="ESXDy0AD2gs">
+      <a href="https://www.youtube.com/watch?v=ESXDy0AD2gs" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/ESXDy0AD2gs/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/ESXDy0AD2gs/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=fwx3stTi_2E" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/fwx3stTi_2E/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="fwx3stTi_2E">
+      <a href="https://www.youtube.com/watch?v=fwx3stTi_2E" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/fwx3stTi_2E/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/fwx3stTi_2E/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=yx3p11yTXPQ" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/yx3p11yTXPQ/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="yx3p11yTXPQ">
+      <a href="https://www.youtube.com/watch?v=yx3p11yTXPQ" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/yx3p11yTXPQ/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/yx3p11yTXPQ/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=df04NextyGw" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/df04NextyGw/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="df04NextyGw">
+      <a href="https://www.youtube.com/watch?v=df04NextyGw" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/df04NextyGw/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/df04NextyGw/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=dIaABFSgSCA" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/dIaABFSgSCA/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="dIaABFSgSCA">
+      <a href="https://www.youtube.com/watch?v=dIaABFSgSCA" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/dIaABFSgSCA/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/dIaABFSgSCA/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=x7Shot1NiKQ" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/x7Shot1NiKQ/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="x7Shot1NiKQ">
+      <a href="https://www.youtube.com/watch?v=x7Shot1NiKQ" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/x7Shot1NiKQ/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/x7Shot1NiKQ/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=Y57Bbm8-l18" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/Y57Bbm8-l18/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="Y57Bbm8-l18">
+      <a href="https://www.youtube.com/watch?v=Y57Bbm8-l18" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/Y57Bbm8-l18/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/Y57Bbm8-l18/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=eoW9ezIykik" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/eoW9ezIykik/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="eoW9ezIykik">
+      <a href="https://www.youtube.com/watch?v=eoW9ezIykik" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/eoW9ezIykik/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/eoW9ezIykik/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=eB3AH11_US4" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/eB3AH11_US4/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="eB3AH11_US4">
+      <a href="https://www.youtube.com/watch?v=eB3AH11_US4" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/eB3AH11_US4/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/eB3AH11_US4/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=vB2yoF4OgOI" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/vB2yoF4OgOI/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="vB2yoF4OgOI">
+      <a href="https://www.youtube.com/watch?v=vB2yoF4OgOI" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/vB2yoF4OgOI/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/vB2yoF4OgOI/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=6PzseOBno84" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/6PzseOBno84/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="6PzseOBno84">
+      <a href="https://www.youtube.com/watch?v=6PzseOBno84" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/6PzseOBno84/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/6PzseOBno84/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=PUWn8mBUHfA" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/PUWn8mBUHfA/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="PUWn8mBUHfA">
+      <a href="https://www.youtube.com/watch?v=PUWn8mBUHfA" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/PUWn8mBUHfA/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/PUWn8mBUHfA/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=867AkQaRg5Q" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/867AkQaRg5Q/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="867AkQaRg5Q">
+      <a href="https://www.youtube.com/watch?v=867AkQaRg5Q" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/867AkQaRg5Q/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/867AkQaRg5Q/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=br-FWzVk0wM" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/br-FWzVk0wM/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="br-FWzVk0wM">
+      <a href="https://www.youtube.com/watch?v=br-FWzVk0wM" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/br-FWzVk0wM/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/br-FWzVk0wM/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=hWjKpcrfvck" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/hWjKpcrfvck/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="hWjKpcrfvck">
+      <a href="https://www.youtube.com/watch?v=hWjKpcrfvck" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/hWjKpcrfvck/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/hWjKpcrfvck/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=nnJ-0XsBl3I" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/nnJ-0XsBl3I/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="nnJ-0XsBl3I">
+      <a href="https://www.youtube.com/watch?v=nnJ-0XsBl3I" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/nnJ-0XsBl3I/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/nnJ-0XsBl3I/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=AXZZV5Q4EoQ" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/AXZZV5Q4EoQ/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="AXZZV5Q4EoQ">
+      <a href="https://www.youtube.com/watch?v=AXZZV5Q4EoQ" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/AXZZV5Q4EoQ/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/AXZZV5Q4EoQ/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=zoOFOQz6Vrc" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/zoOFOQz6Vrc/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="zoOFOQz6Vrc">
+      <a href="https://www.youtube.com/watch?v=zoOFOQz6Vrc" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/zoOFOQz6Vrc/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/zoOFOQz6Vrc/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=f4_FzfLy2Hg" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/f4_FzfLy2Hg/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="f4_FzfLy2Hg">
+      <a href="https://www.youtube.com/watch?v=f4_FzfLy2Hg" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/f4_FzfLy2Hg/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/f4_FzfLy2Hg/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=AMs5cEzpDoI" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/AMs5cEzpDoI/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="AMs5cEzpDoI">
+      <a href="https://www.youtube.com/watch?v=AMs5cEzpDoI" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/AMs5cEzpDoI/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/AMs5cEzpDoI/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=1CJlLucFuCQ" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/1CJlLucFuCQ/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="1CJlLucFuCQ">
+      <a href="https://www.youtube.com/watch?v=1CJlLucFuCQ" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/1CJlLucFuCQ/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/1CJlLucFuCQ/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=jy00pjeMk_g" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/jy00pjeMk_g/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="jy00pjeMk_g">
+      <a href="https://www.youtube.com/watch?v=jy00pjeMk_g" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/jy00pjeMk_g/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/jy00pjeMk_g/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=x6PTN8MZmqI" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/x6PTN8MZmqI/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="x6PTN8MZmqI">
+      <a href="https://www.youtube.com/watch?v=x6PTN8MZmqI" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/x6PTN8MZmqI/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/x6PTN8MZmqI/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=rfXtfDiJrss" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/rfXtfDiJrss/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="rfXtfDiJrss">
+      <a href="https://www.youtube.com/watch?v=rfXtfDiJrss" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/rfXtfDiJrss/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/rfXtfDiJrss/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=4Qugl5QtQTw" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/4Qugl5QtQTw/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="4Qugl5QtQTw">
+      <a href="https://www.youtube.com/watch?v=4Qugl5QtQTw" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/4Qugl5QtQTw/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/4Qugl5QtQTw/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
-    <div class="video-card">
-      <a href="https://www.youtube.com/watch?v=a0C2i7r3yxI" target="_blank" rel="noopener noreferrer" class="video-embed" style="display:block; position:relative; cursor:pointer; text-decoration:none; overflow:hidden;">
-        <img src="https://img.youtube.com/vi/a0C2i7r3yxI/maxresdefault.jpg" 
-             alt="YouTube Video" 
+    <div class="video-card" data-video-id="a0C2i7r3yxI">
+      <a href="https://www.youtube.com/watch?v=a0C2i7r3yxI" target="_blank" rel="noopener noreferrer" class="video-thumb">
+        <img src="https://img.youtube.com/vi/a0C2i7r3yxI/hqdefault.jpg"
+             alt="Loading video title..."
+             onerror="this.onerror=null; this.src='https://img.youtube.com/vi/a0C2i7r3yxI/mqdefault.jpg';"
              style="width:100%; height:100%; object-fit:cover; transition:transform 0.3s;"
              onmouseover="this.style.transform='scale(1.05)'"
              onmouseout="this.style.transform='scale(1)'"/>
-        <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:68px; height:48px; background:rgba(255,0,0,0.9); border-radius:12px; transition:background 0.3s;" onmouseover="this.style.background='rgba(255,0,0,1)'" onmouseout="this.style.background='rgba(255,0,0,0.9)'">
-          <svg viewBox="0 0 68 48" style="width:100%; height:100%;">
-            <path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/>
-            <path d="M 45,24 27,14 27,34" fill="#ff0000"/>
-          </svg>
-        </div>
+        <div class="play-btn"><svg viewBox="0 0 68 48"><path d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#fff"/><path d="M 45,24 27,14 27,34" fill="#ff0000"/></svg></div>
       </a>
+      <div class="video-title loading">Loading...</div>
     </div>
 
   </div>
@@ -570,5 +507,35 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+// Fetch video titles from YouTube oEmbed API
+document.addEventListener('DOMContentLoaded', function() {
+  const videoCards = document.querySelectorAll('.video-card[data-video-id]');
+
+  videoCards.forEach(function(card) {
+    const videoId = card.dataset.videoId;
+    const titleEl = card.querySelector('.video-title');
+    const imgEl = card.querySelector('img');
+    const oembedUrl = 'https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=' + videoId + '&format=json';
+
+    fetch(oembedUrl)
+      .then(function(response) {
+        if (!response.ok) throw new Error('Failed to fetch');
+        return response.json();
+      })
+      .then(function(data) {
+        const title = data.title || "Cooker's VW Build Video";
+        titleEl.textContent = title;
+        titleEl.classList.remove('loading');
+        imgEl.alt = title;
+      })
+      .catch(function() {
+        titleEl.textContent = "Cooker's VW Build Video";
+        titleEl.classList.remove('loading');
+        imgEl.alt = "Cooker's VW Build Video";
+      });
+  });
+});
+</script>
 </body>
 </html>
